@@ -41,21 +41,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'accounts',
+]
 
-
-MIDDLEWARE= [
+MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
 ]
 
-ROOT_URLCONF= 'mathsplusrevision.urls'
+ROOT_URLCONF = 'mathsplusrevision.urls'
 
-TEMPLATES= [
+TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [os.path.join(BASE_DIR, 'templates')],
@@ -72,7 +75,7 @@ TEMPLATES= [
     },
 ]
 
-WSGI_APPLICATION= 'mathsplusrevision.wsgi.application'
+WSGI_APPLICATION = 'mathsplusrevision.wsgi.application'
 
 
 # Database
@@ -88,7 +91,7 @@ WSGI_APPLICATION= 'mathsplusrevision.wsgi.application'
 #     }
 # }
 
-DATABASES= {
+DATABASES = {
     'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
 }
 
@@ -96,7 +99,7 @@ DATABASES= {
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS= [
+AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
@@ -111,27 +114,30 @@ AUTH_PASSWORD_VALIDATORS= [
     },
 ]
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'accounts.backends.CaseInsenstiveAuth', ]
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-LANGUAGE_CODE= 'en-us'
+LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE= 'UTC'
+TIME_ZONE = 'UTC'
 
-USE_I18N= True
+USE_I18N = True
 
-USE_L10N= True
+USE_L10N = True
 
-USE_TZ= True
+USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
-STATIC_URL= '/static/'
+STATIC_URL = '/static/'
 
-STATICFILES_DIRS= (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-MEDIA_URL= '/media/'
-MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
