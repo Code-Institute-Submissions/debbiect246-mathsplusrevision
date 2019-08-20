@@ -24,8 +24,8 @@ from .settings import MEDIA_ROOT
 
 
 urlpatterns = [
-    #url(r'^admin/', admin.site.urls),
-    path('admin/', admin.site.urls),
+    url(r'^admin/', admin.site.urls),
+
     url(r'^$', all_products, name='index'),
     url(r'^accounts/', include(urls_accounts)),
     url(r'^products/', include(urls_products)),
