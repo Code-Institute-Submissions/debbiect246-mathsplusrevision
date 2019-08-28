@@ -64,3 +64,8 @@ caption p {
 .product-description {
     min-height: 40px;
 }
+
+.firstline {
+    font-weight: bold;
+    text-align: center;
+}

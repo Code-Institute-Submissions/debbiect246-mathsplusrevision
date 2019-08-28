@@ -34,6 +34,7 @@
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
                     {% endif %}
+                    
                     <li>
                         <a href="{% url 'view_cart' %}">
                             <i class="fa fa-shipping-cart"></i>Cart
@@ -46,6 +47,7 @@
             </div>
         </div>
     </nav>
+    <p class="firstline"> website for papers for 11 plus, 13 plus and 16 plus maths</p>
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
