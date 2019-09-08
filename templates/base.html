@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    {% block head_js %}
+    {% endblock head_js %}
 </head>
 <body>
     <!-- Fixed masthead -->
@@ -47,10 +49,8 @@
             </div>
         </div>
     </nav>
-    <p class="firstline"> Revision papers and topics to help your child </p>
-    <p class="firstline"> revise for their 11 plus, 13 plus or 16 plus exam</p>
-    <p class="firstline"> The first 2 sets of papers are free </p>
-    <p class="firstline"> You can order other sets of papers for £20 each </p>
+    <p class="firstline"> Revision papers and topics to help your child revise for their 11+ 13+ or 16+ math exam </p>
+    <p class="firstline"> The first 2 sets of papers are free.  You can order other sets of papers for £20 each   </p>
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
