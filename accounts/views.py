@@ -63,7 +63,7 @@ def register(request):
                                      password=request.POST.get('password1'))
 
             if user:
-                auth.login(request, user)
+                auth.login(user=user, request=request)
                 messages.success(request, "You have successfully registered")
                 return redirect(reverse('index'))
 
