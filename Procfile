@@ -1,1 +1,1 @@
-web: gunicorn FINALMILESTONEPROJECT.wsgi:application
+web: gunicorn mathsplusrevision.wsgi:application
