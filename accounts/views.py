@@ -24,21 +24,19 @@ def login(request):
     if request.method == 'POST':
         user_form = UserLoginForm(request.POST)
         if user_form.is_valid():
+            user_form.save
+            # log in the user
+
             user = auth.authenticate(username=request.POST.get('username'),
                                      password=request.POST.get('password'))
 
             if user:
-                auth.login(request, user)
-                messages.error(request, "You have successfully logged in")
+                messages.success(request, "You have successfully logged in")
+                return redirect(reverse('index'))
 
-                if request.GET and request.GET['next'] != '':
-                    next = request.GET['next']
-                    return HttpResponseRedirect(next)
-                else:
-                    return redirect(reverse('index'))
             else:
-                user_form.add_error(
-                    None, "Your username or password are incorrect")
+                messages.error(
+                    request, "Your username or password are incorrect")
     else:
         user_form = UserLoginForm()
 
