@@ -30,13 +30,9 @@ def login(request):
             user = auth.authenticate(username=request.POST['username'],
                                      password=request.POST['password'])
             if user:
-                auth.login(request=request, user=user)
+                auth.login(user=user, request=request)
                 messages.error(request, "You have successfully logged in")
-                # if request.GET and request.GET['next'] != '':
-                # next = request.GET['next']
-                # return HttpResponseRedirect(next)
-                # else:
-                return redirect(reverse('home:index'))
+                return redirect(reverse('index'))
             else:
                 # user_form.add_error(
                 login_form.add_error(
@@ -44,7 +40,7 @@ def login(request):
     else:
         #user_form = UserLoginForm()
         login_form = UserLoginForm()
-    # args = {'user_form': user_form, 'next': request.GET.get('next', '')}
+
     args = {'login_form': login_form}
     return render(request, 'login.html', args)
 
