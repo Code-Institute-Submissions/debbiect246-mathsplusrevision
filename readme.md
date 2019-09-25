@@ -1,4 +1,4 @@
-# Maths Plus Revsion
+# [Maths Plus Revsion](https://www.theadvisory.co.uk/house-selling/best-time-to-sell-house/)
 
 This is a revision app for  
 students taking the maths 11 plus
@@ -6,68 +6,78 @@ students taking the maths 11 plus
 
 [![Build Status](https://travis-ci.org/debbiect246/mathsplusrevision.svg?branch=master)](https://travis-ci.org/debbiect246/mathsplusrevision)
 
-In this project, I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used by students and parents.
+I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used by students and parents.
 
 Students can view and order one paper and its associated markscheme for free and then they can order extra papers and markschemes using stripe.
 
 
 The app was deployed to heroku and can be accessed by clicking on the title above.   Alternatively here is a link to the heroku app. 
-https://maths-plus-revision.herokuapp.com/
+<https://maths-plus-revision.herokuapp.com/>
 
-UX
-User stories
+## UX
+### User stories
+1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.  
+2.  A user can see 11 plus, 13 plus and 16 plus papers to select from without logging in. 
+3.  A user can only purchase 11 plus, 13 plus or 16 plus papers if they are logged in.
+4. If a user attempts to buy these papers without login in, the app will direct them to login.
+5. Once logged in, the user can checkout items in the cart.
+6. A user will see a message on the screen stating that they are logged in.
+7. If a user does not have an account they will be directed to create one.
+8. Once a user has created an account, they will see a message on the screen informing them that their account has been successfully created. 
+9. Checked out items will be paid for using credit or debit cards.
+10. The user will get an acknowledgement of payment.
+11. A user can access a blog on the app from the main menu.
+12. The blog will contain tips on learning maths and ideas on how to measure progress made.
+13. A user can comment on a blog and the moderator of the blog can decide on whether the comment can be put on the app for other users to see.
+14. A user can review papers purchased using the review button in the menu.
+15. The review button allows the user to give a star rating to a particular paper and to write a review for other users to see.
+16. All reviews and ratings are subject to moderation by the owner of the app.
+17. A user can contact the owner of the app using a contact form.
+18. The contact form will have fields for: title, full name, address, city or region, postcode, country.
+19. A user will submit the form using a contact button.
 
-1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.
-2.  A user can 
-
-Technologies Used
-HTML
+## Technologies Used
+* HTML
 
 Hypertext markup language is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
 
-CSS
+* CSS
 
 stands for Cascading Style sheets which is a type of style language which sets out how the webpage should be styled. It allows the user to style the webpage in a particular way, making the UX richer and more meaningful for the user.
 
+* Django
 
-
-Django
-
-Jinja2
+* Jinja2
 
 Jinja 2 is a templating language which is used for rendering data in html templates and is used for communication between the front end and back end of an app.
 
-jquery
+* jquery
 
 jquery is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
 
-python
+* python
 
 I used Python version 3.7 to run my app. Python is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.
 
-Postgres
+* Postgres
 
 I used Postgres for the models in my database, although sqlite3 was available in django. Mongodb is a document database that provides the user with the facility to create, read, update and delete documents in a database. Mongodb documents are stored in collections in json or bson format and this makes it easy to work with in Python and other programming languages.
 
-Heroku
+* Heroku
 
 Heroku is a cloud platform that allows a developer to build, deliver, scale and monitor apps. Heroku makes the experience of deploying an app relatively straightforward.
 
-Chrome Developer Tools
+* Chrome Developer Tools
 
 I used chrome developer tools to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
+## Testing
+Testing was carried out by human beings.
 
-Testing
-Testing was carried out by human beings. 
+* Manual Testing
 
-Manual Testing
-Log in page:
+ Log in page:
 
 Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.
-
-login page:
-
-Check that a user can log in or register for an account.
 
 A message is shown that tells the user that they are logged in or that they have created an account.
 
@@ -76,21 +86,15 @@ Check that one paper in each set of 11 plus, 13 plus and 16 plus is free to orde
 
 Other sets of papers cost £10 each.
 
-
-
 User profile
-
-Check that the user profile for each registered order is up to date and accurate.
+*Check that the user profile for each registered order is up to date and accurate.
 
 Cart
-
-Check that the items purchased by users are transferred to the cart ready for checkout.
+*Check that the items purchased by users are transferred to the cart ready for checkout.
 
 Checkout
 
 Check that only the items in the users cart are available for checkout and that the checkout process works.  The user is shown a message to say that checkout has been successful for each order.
-
-
 
 Interesting bugs or problems I discovered during testing.
 
@@ -146,4 +150,4 @@ Content The text for the islands was copied from wikpaedia.
 
 Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
 
-Acknowledgements I received inspiration for this project from my mentor Simen Daehlin, fellow students especially Jo Wings, Miro, John Lynch and John Longatty. Family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used pymongo and flask documentation to help me get my code correct.
+Acknowledgements I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used pymongo and flask documentation to help me get my code correct. 
