@@ -37,29 +37,25 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 19. A user will submit the form using a contact button.
 
 ## Technologies Used
-* HTML
+* [HTML](https://www.w3schools.com/html/)
 
 Hypertext markup language is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
 
-* CSS
+* [CSS](https://www.w3schools.com/Css/) stands for Cascading Style sheets which is a type of style language which sets out how the webpage should be styled. It allows the user to style the webpage in a particular way, making the UX richer and more meaningful for the user.
 
-stands for Cascading Style sheets which is a type of style language which sets out how the webpage should be styled. It allows the user to style the webpage in a particular way, making the UX richer and more meaningful for the user.
+* [Django](https://www.djangoproject.com/)
+is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience.
 
-* Django
 
 * Jinja2
 
 Jinja 2 is a templating language which is used for rendering data in html templates and is used for communication between the front end and back end of an app.
 
-* jquery
+* [jquery](https://jquery.com/) is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
 
-jquery is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
+* [python](https://www.python.org/psf-landing/) is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.  The version of Python I used in my app is 3.7
 
-* python
-
-I used Python version 3.7 to run my app. Python is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.
-
-* Postgres
+* [Postgres](https://www.postgresql.org/)
 
 I used Postgres for the models in my database, although sqlite3 was available in django. Mongodb is a document database that provides the user with the facility to create, read, update and delete documents in a database. Mongodb documents are stored in collections in json or bson format and this makes it easy to work with in Python and other programming languages.
 
@@ -67,7 +63,7 @@ I used Postgres for the models in my database, although sqlite3 was available in
 
 Heroku is a cloud platform that allows a developer to build, deliver, scale and monitor apps. Heroku makes the experience of deploying an app relatively straightforward.
 
-* Chrome Developer Tools
+* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)
 
 I used chrome developer tools to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
 ## Testing
@@ -109,45 +105,45 @@ Development process of my project
 I created a new folder for my project.  
 I created a virtual environment and installed django in this.
 
-I then created a new django project in vscode as well as a .gitignore folder ready to hold files that I didnt want to push to github.
+I then created a new django project, called mathsplusrevision in vscode as well as a .gitignore folder ready to hold files that I didnt want to push to github.
+
+My settings.py file contained the list of apps that I created as I created my project.  The apps I created were: 
+* media - this app would hold pictures of images for the products that would appear on the website.
+* products - this app contained information about the products I was selling including models for the database design.
+* search - this app contained code for searching the app for a particular item and then displaying it on the screen.
+* accounts - this app allowed a user to create an account.
+* cart - this app enabled a user to place items on the cart ready for purchase.
+* checkout - this app enabled a user to checkout and pay for their purchases.
+* blog - this app contained a blog with tips on how to successfully learn maths needed to pass the relevant exams, and finally
+* review - this app allowed users to rate and review their purchases.
 
 
 I created a static folder for my images and my styles.css files and a templates folder for my templates.
-Next thing was to set up my base template html file and my app.py file.
-In my base html file I started with html boiler plate then added in the following command '{% block content %} {% endblock %}' so that my nav bar would appear on each page. I created my nav bar using an ordered list. Effects for the nav bar were put into my styles.css file.
-In my app.py file I imported all the modules I would need and then set up a secret key and set my debug to True so that I could get an error log if there was something wrong with my code I could sort it out with the help of the error log. I also set up my secret key as part of my cookie encryption.
-At this point I pushed my app to heroku in readiness for the final push to heroku later on. This meant I had to create my procifle and requirements file in order for the app to run.
-I created my database in mlab. This consisted of 3 collections: 1 for my recipes, 1 for the Caribbean islands and 1 for my users. The recipe collection was used to hold details of all my recipes. My caribbean island collection held the details of 21 Caribbean islands. My user collection held the names and passwords of all users of the recipe app. It was used to endure that only recipe authors could edit their own recipes and also enabled users to login to the app.
-I created an admin user, creating a login and password in this format, noting this format as I would need it later to put in my config.py file mongodb://<dbuser>:<dbpassword>@XXXXXX.mlab.com:XXXXX/recipe_manager
-I entered 8 recipes into my recipe collection,which consisted of 15 key values in json format. Schema for my recipe collection:
+Next thing was to set up my base template folder with four files inside:  base.html,  and registration.html.
 
-I returned to my app.py page to connect my database to my app. I entered the environment details in to my config.py file and then put this in gitignore. I also created my procfile and my requirements.txt file.
-I then built my allrecipeslist page so that my recipes would display on the screen. Initially I used accordian format from materializecss but then changed the display to cards on the advice of my mentor. I checked that the allrecipeslist page worked, and that summary information was displayed on the front of the card with a picture of the recipe, and on clicking on the three dot icon on the right hand top side of the card, the flip side of the card would then be shown together with the ingredients and method for making the recipe.
-I then put together my addrecipes and editrecipes pages using addrecipes page as a template for my editrecipes page.
-I checked that both my addrecipes and editrecipes pages worked ensuring that a user could add a recipe and only the author of the recipe could edit a recipe.
-I returned to my allrecipeslist page and put in a link to my islands collections so that users could find out more about the island a recipe came from. This involved building an island page which displayed a picture of the island, a picture of the map of the caribbean and some information about the island. Users checked that this worked.
-Finally I built my findrecipe page. This enabled a user to find a recipe which was either a lunch, dinner or dessert recipe, or to find a recipe which contained meat, fish, vegetables or sugar. Users could also search for recipes which came from speificifed islands, or search for recipes which did not contain specified allergens. As part of this I created a results page which displayed the results of each search.
-I then created a login and register page. The login page allowed registered users to access the app, and if a user was not registered, then the register page enabled them to register.
+In my base html file I started with html boiler plate then added in the following command '{% block content %} {% endblock %}' so that my nav bar would appear on each page. I created my nav bar using an ordered list. 
+Effects for the nav bar were put into my styles.css file which was in the static folder.
+In my django virtual environment, I imported all the modules I would need and put this in git ignore.  I then set up a stripe account and used the secret and publishable key from my env.py file.  I ensured that the keys could only be accessed from this and not on public display on github.  
+At this point I pushed my app to heroku in readiness for the final push to heroku later on. This meant I had to create my procifle and requirements file in order for the app to run.
+
+
 Lastly I checked that the entire app worked before doing a final push to heroku, making sure that my environment variables were correctly input into the heroku dashboard for the app and that debug was set to false so that the app was secure.
 My mentor had a look at my project and advised some changes, so I needed to set debug to true in my cloud9 editor whilst I made these changes, then I needed to remember to set debug back to false before pushing to heroku again.
 Finally I created a favicon for my app, using a freefavicom creator
-Deployment
+* Deployment
 The following section describes the process I undertook to deploy this project to Heroku.
 
-I ensured that all required technologies were installed locally, as per the requirements.txtfile.
-I ensured that I had created a procfile indicating that my app was based on python.
-I used the bash terminal to log in to Heroku, using 'heroku login' command. Input Heroku login details.
-I then created a new Heroku app, using heroku apps:create appname command.
-I pushed my project to Heroku, using push -u heroku master command.
-Then I created scale, using heroku ps:scale web=1 command.
-I then logged into Heroku and selected newly created app.
-I then selected settings. Select 'Reveal Config'. I then added IP 0.0.0.0 and PORT 5000.
-Then from the 'More' menu on the top right, I selected 'Restart all dynos'.
-To view my app, in settings I selected the Domain URL, NOT Git URL to view your hosted application.
-I checked that my app was now deployed via Heroku
-Credits
-Content The text for the islands was copied from wikpaedia.
+1. I ensured that all required technologies were installed locally, as per the requirements.txtfile.
+2. I ensured that I had created a procfile indicating that my app was based on python.
+3. I used the bash terminal to log in to Heroku, using 'heroku login' command. Input Heroku login details.
+4. I then created a new Heroku app, using heroku apps:create appname command.
+5. I pushed my project to github and enabled automatic link to heroku.  This took some time to set up as I had to make sure that my environmental variables were correct.
+6. I then logged into Heroku and selected newly created app.
+7. Then from the 'More' menu on the top right, I selected 'Restart all dynos'.
+8. I checked that my app was now deployed via Heroku
+# Credits
+* Content The text for the islands was copied from wikpaedia.
 
-Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
+* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
 
 Acknowledgements I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used pymongo and flask documentation to help me get my code correct. 
