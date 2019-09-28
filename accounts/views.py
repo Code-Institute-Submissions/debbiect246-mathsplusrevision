@@ -31,7 +31,8 @@ def login(request):
                                      password=request.POST['password'])
             if user:
                 auth.login(user=user, request=request)
-                messages.error(request, "You have successfully logged in")
+                messages.error(
+                    request, " Welcome you have successfully logged in")
                 return redirect(reverse('index'))
             else:
                 # user_form.add_error(
