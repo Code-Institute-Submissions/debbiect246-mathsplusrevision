@@ -35,6 +35,7 @@
                     {%  else %}
                         <li><a href="{% url 'register' %}">Register</a></li>
                         <li><a href="{% url 'login' %}">Log In</a></li>
+                        
                     {% endif %}
                     
                     <li>
@@ -49,9 +50,9 @@
             </div>
         </div>
     </nav>
-    <!--<p class="firstline"> Revision papers and topics to help your child revise for their 11+ 13+ or 16+ math exam </p>
+    <p class="firstline"> Revision papers and topics to help your child revise for their 11+ 13+ or 16+ math exam </p>
     <p class="firstline"> The first set of papers is free.  You can order other sets of papers for £10 each   </p>
-    <p class="firstline"> You will need to login or create an account to purchase papers.</p>-->
+    <p class="firstline"> You will need to login or create an account to purchase papers.</p>
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
