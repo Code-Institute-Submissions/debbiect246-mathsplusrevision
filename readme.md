@@ -46,9 +46,9 @@ Hypertext markup language is used to create the structure of web pages. It consi
 * [Django](https://www.djangoproject.com/)
 is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience.
 
-* Jinja2
+* django templating language
 
-Jinja 2 is a templating language which is used for rendering data in html templates and is used for communication between the front end and back end of an app.
+The django templating language is a templating language which is used for rendering data in html templates and is used for communication between the front end and back end of an app.
 
 * [jquery](https://jquery.com/) is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
 
@@ -148,7 +148,7 @@ The following section describes the process I undertook to deploy this project t
 7. Then from the 'More' menu on the top right, I selected 'Restart all dynos'.
 8. I checked that my app was now deployed via Heroku
 
-## Steps involved in creating my django app
+## Breakdown of steps involved in creating my django app
 
  Initially I found django really difficult.  Although I had gone through the CI videos several times, it all seemed so disjointed, jumping around all over the place and so many files in different folders, some folders with the same name, so I spent many hours trying to work out how the code all fitted together.  I looked at you tube videos and 2 udemy courses which I viewed several times before getting django sorted out in my head.  The steps below indicate the steps I took to produce my app.
 
@@ -183,4 +183,4 @@ The following section describes the process I undertook to deploy this project t
 
 ## Acknowledgements
 
-I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used pymongo and flask documentation to help me get my code correct.
+I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and further research was needed.
