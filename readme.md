@@ -148,6 +148,24 @@ The following section describes the process I undertook to deploy this project t
 7. Then from the 'More' menu on the top right, I selected 'Restart all dynos'.
 8. I checked that my app was now deployed via Heroku
 
+## Steps involved in creating my django app
+
+ Initially I found django really difficult.  Although I had gone through the CI videos several times, it all seemed so disjointed, jumping around all over the place and so many files in different folders, some folders with the same name, so I spent many hours trying to work out how the code all fitted together.  I looked at you tube videos and 2 udemy courses which I viewed several times before getting django sorted out in my head.  The steps below indicate the steps I took to produce my app.
+
+ 1. First I created a virtual environment and made a .gitignore file.  I then installed django.
+ 2. I put all my virtual environment files and database files into .gitignore so that they would not be pushed to github.
+ 3. I then created a new github repo and initialised a local repo for my project.
+ 4. I then created a project using djano-admin start project command, giving my project the name mathsplusrevision.
+ 5. I set up my project in heroku - linking my github account to heroku so that each time I pushed to github I also pushed to heroku.  This took some time as initially my environmental variables were incorrect in heroku and it took a while to figure out what was wrong.
+ 6. I then created my env file to hold all my passwords for my database and my secret and publishable keys for stripe.  This file was put in .gitignore.
+ 7. I then ensured that my settings were correct in my settings.py file in my project.  This meant that I had to ensure that heroku was included in my allowed hosts and that my apps were added as I created them into my installed apps list.
+ 8. I then started creating my apps.  The first one I created was my accounts app which was cloned from the CI site.  Sounds easy but there were changes I had to make to this app to make it work, and as I had chosen to use django 2.2 instead of django 1.11 these changes took some time to sort out.  
+ 9.  I had to remember to create a requirements.txt file as I downloaded different packages for my app as I went along. Pillow was used to handle images and whitenoise for my media files.
+ 10. I created an overall templates folder which contained my base.html file which controlled the way in which the app which initially be rendered to the screen.  This file contained the code for my navbar and the general layout of the initial screen.  Within my accounts app I created another templates folder which contained four html files- login, index, profile and register.  Each file took its main format from the base.html file and displayed appropriate messages to the user for loging in, registering and displaying a loged in users profile.
+ 11. Whilst working through the accounts app, I regularly saved my work to github.  I also tried to get travis to work several times without success.  I put a link to travis in this readme file and also created a .yml file but despite my best efforts I was unable to get travis to work and the build kept failing, despite the app working as required.  I know that there is an issue with travis working with python 3.x and django 2.x so this is something I will need to keep working on after the submission of this project.
+ 12. d
+
+
 ## Credits
 
 * Content The text for the islands was copied from wikpaedia.
