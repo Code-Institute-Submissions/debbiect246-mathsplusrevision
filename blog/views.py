@@ -4,5 +4,5 @@ from django.shortcuts import render, redirect, reverse
 
 
 def blog(request):
-    """A View that renders the cart contents page"""
+    """A View that renders the blog contents page"""
     return render(request, "blog.html")
