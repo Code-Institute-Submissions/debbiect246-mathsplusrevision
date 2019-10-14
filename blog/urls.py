@@ -1,5 +1,5 @@
 from django.conf.urls import url, include
-from . import urls_reset
+from .import urls_reset
 from .views import blog
 
 
