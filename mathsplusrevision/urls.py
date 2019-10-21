@@ -39,7 +39,7 @@ urlpatterns = [
     url(r'^checkout/', include(urls_checkout)),
     url(r'^search/', include(urls_search)),
     #url(r'^$', RedirectView.as_view(url='posts/')),
-    url(r'^posts/', include('urls_posts')),
+    url(r'^posts/', include(urls_posts)),
 
 
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})

@@ -1,7 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import Post
-from .forms import BlogPostForm
+
+
+def posts(request):
+    posts = Post.objects.all()
+    return render(requests, "blogposts.html", {"posts": posts})
 
 
 def get_posts(request):
