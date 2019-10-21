@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from accounts import urls as urls_accounts
 from products import urls as urls_products
+from posts import urls as urls_posts
 from cart import urls as urls_cart
 from search import urls as urls_search
 from checkout import urls as urls_checkout
