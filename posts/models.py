@@ -16,5 +16,5 @@ class Post(models.Model):
     views = models.IntegerField(default=0)
     tag = models.CharField(max_length=30, blank=True, null=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
