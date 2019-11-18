@@ -7,7 +7,7 @@
     <p>This is a list of papers that you have purchased:</p>
 
     {% for item in orders %}
-            <p>{{orders.order}}-{{ orders.product }} - {{ orders.quantity }}</p>
+            <p>{{item.order}}-{{ item.product }} - {{ item.quantity }}</p>
     {% endfor %}
 
 
