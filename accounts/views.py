@@ -51,7 +51,7 @@ def login(request):
 def profile(request):
     """A view that displays the profile page of a logged in user"""
     orders = OrderLineItem.objects.all()
-    return render(request, 'profile.html', {'OrderLineItem': orders})
+    return render(request, 'profile.html', {'orders': orders})
 
 
 def register(request):
