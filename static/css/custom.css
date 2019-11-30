@@ -32,6 +32,15 @@ footer {
     background-color: #c67605;
 }
 
+.jumbotron {
+    background: white url("/media/images/ecommerce-header.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 20em;
+    filter: brightness(40%);
+}
+
 .product {
     background-size: contain;
     background-position: center center;
