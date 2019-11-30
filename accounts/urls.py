@@ -10,5 +10,4 @@ urlpatterns = [
     url(r'^home/$', index, name='home'),
     url(r'^password-reset/', include(urls_reset)),
 
-
 ]
