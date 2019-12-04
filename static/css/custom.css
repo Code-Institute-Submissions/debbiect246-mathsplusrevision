@@ -33,7 +33,7 @@ footer {
 }
 
 .jumbotron {
-    background: white url("/media/images/ecommerce-header.jpg");
+    background: url("/media/images/ecommerce-header.jpg");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
