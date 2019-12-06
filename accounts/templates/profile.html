@@ -5,10 +5,8 @@
     <br>
     <br>
     <p>This is a list of papers that you have purchased:</p>
-
-    {% for item in orders %}
-            <p>{{item.product.name}}  -  {{item.product.quantity}}  -  {{ item.product.price}}  - {{item.product.order}}</p>
-    {% endfor %}
-
-
+    
+            {% for item in orders %}
+                <p>{{item.product.name}}  -  {{item.order.quantity}}  -  {{ item.order.price}}  - {{item.product.order}}</p>
+            {% endfor %}
 {% endblock %}

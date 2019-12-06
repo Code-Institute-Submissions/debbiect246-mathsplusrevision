@@ -50,7 +50,10 @@ def login(request):
 @login_required
 def profile(request):
     """A view that displays the profile page of a logged in user"""
-    orders = OrderLineItem.objects.all()
+    user = request.user
+    if user.is_authenticated:
+        papers_purchased = OrderLineItem.objects.filter(id=user.id)
+        orders = OrderLineItem.objects.all()
     return render(request, 'profile.html', {'orders': orders})
 
 
