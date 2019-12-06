@@ -1,4 +1,4 @@
-# [Maths Plus Revsion](https://www.theadvisory.co.uk/house-selling/best-time-to-sell-house/)
+# [Maths Plus Revsion](https://maths-plus-revision.herokuapp.com/)
 
 This is a revision app for  
 students taking the maths 11 plus
@@ -173,14 +173,16 @@ The following section describes the process I undertook to deploy this project t
  19. Finally I created my checkout app, which would enable a user to successfully pay for goods purchased.  I needed to create a stripe account, then install stripe ensuring that my public and private key were carefully stored in env.py and in turn, env.py was put in my .gitignore file.  Again the checkout app was added to the list of installed apps.
  20. At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
  21. I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
- 22. Finally when all this was done I pushed my app to heroku and ran it from there.  As the app was working I hoped that the travis build would be fine but I was wrong. I did periodically run my app in heroku as the project progressed, however travis repeatedly failed, so I needed to resort to manual testing.
+ 22. I pushed my app to heroku  at regular interavls, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
 
 ## Credits
 
-* Content The text for the islands was copied from wikpaedia.
+* Content:  All images were from photos of papers I took.
 
-* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
+* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only. 
+
+* Main header image on homepage shared by by Chuk Yong from Pixabay. 
 
 ## Acknowledgements
 
-I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and further research was needed.
+I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet or using the slack room or CI tutors to help me work out how to do something.
