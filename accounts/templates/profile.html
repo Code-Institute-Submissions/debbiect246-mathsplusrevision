@@ -3,10 +3,10 @@
     <h2>Good to see you!</h2>
     <p>You are logged in as {{ user.username }} </p>
     <br>
-    <br>
     <p>This is a list of papers that you have purchased:</p>
     
             {% for item in orders %}
-                <p>{{item.product.name}}  -  {{item.order.quantity}}  -  {{ item.order.price}}  - {{item.product.order}}</p>
+                <p>{{papers_purchased}}</p>
+                <p>{{item.product.name}}  -  {{item.product.price}}  - {{item.order_line_item.total}}</p>
             {% endfor %}
 {% endblock %}
