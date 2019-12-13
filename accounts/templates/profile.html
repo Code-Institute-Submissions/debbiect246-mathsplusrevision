@@ -6,7 +6,7 @@
     <p>This is a list of papers that you have purchased:</p>
     
             {% for item in orders %}
-                <p>{{papers_purchased}}</p>
-                <p>{{item.product.name}}  -  {{item.product.price}}  - {{item.order_line_item.total}}</p>
+                <p>{{item.papers_purchased}}</p>
+                <p>{{item.product.name}}  -  {{item.product.price}}  - {{item.orderlineitem.total}}</p>
             {% endfor %}
 {% endblock %}

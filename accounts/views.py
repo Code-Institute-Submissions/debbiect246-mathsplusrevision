@@ -61,7 +61,7 @@ def profile(request):
     if user.is_authenticated:
         papers_purchased = OrderLineItem.objects.filter(id=user.id)
         orders = OrderLineItem.objects.all()
-    return render(request, 'profile.html', {'orders': orders})
+    return render(request, 'profile.html', {'orders': orders, 'papers_purchased': papers_purchased})
 
 
 def register(request):
