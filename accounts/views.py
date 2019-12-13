@@ -6,6 +6,8 @@ from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
 from checkout.models import OrderLineItem
 from products.models import Product
+from accounts.models import UserProfile
+from checkout.models import Order
 
 
 # Create your views here.
@@ -59,9 +61,11 @@ def profile(request):
     """A view that displays the profile page of a logged in user"""
     user = request.user
     if user.is_authenticated:
-        papers_purchased = OrderLineItem.objects.filter(id=user.id)
-        orders = OrderLineItem.objects.all()
-    return render(request, 'profile.html', {'orders': orders, 'papers_purchased': papers_purchased})
+        user = request.user
+        profile = UserProfile.objects.get(user=user)
+        orders = Order.objects.filter(userprofile=profile)
+
+    return render(request, 'profile.html', {'orders': orders})
 
 
 def register(request):
