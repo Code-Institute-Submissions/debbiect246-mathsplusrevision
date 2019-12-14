@@ -61,7 +61,7 @@ def profile(request):
     """A view that displays the profile page of a logged in user"""
     user = request.user
     if user.is_authenticated:
-        user = request.user
+       #user = request.user
         profile = UserProfile.objects.get(user=user)
         orders = Order.objects.filter(userprofile=profile)
 

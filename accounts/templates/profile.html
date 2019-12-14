@@ -4,7 +4,7 @@
     <p>You are logged in as {{ user.username }} </p>
     <br>
     <p>This is a list of papers that you have purchased:</p>
-    {% for order in request.user.userprofile.orders.all %}
-         {{ order }}
+    {% for order in userprofile %}
+         {{ order.product.name}} 
     {% endfor %}
 {% endblock %}
