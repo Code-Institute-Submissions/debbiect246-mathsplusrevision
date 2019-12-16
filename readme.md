@@ -4,8 +4,6 @@ This is a revision app for
 students taking the maths 11 plus
 13 plus and 16 plus exams.
 
-[![Build Status](https://travis-ci.org/debbiect246/mathsplusrevision.svg?branch=master)](https://travis-ci.org/debbiect246/mathsplusrevision)
-
 I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used by students and parents.
 
 Students can view and order one paper and its associated markscheme for free and then they can order extra papers and markschemes using stripe.
