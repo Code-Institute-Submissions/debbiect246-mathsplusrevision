@@ -16,7 +16,7 @@
                     <div class="input-group">
                         <input name="quantity" type="number" min="1" max="999" class="form-control productamount" placeholder="Quantity">
                         <span class="input-group-btn">
-                            <button class="btn btn-success myButton" type="submit">Add</button>
+                            <button class="btn btn-success" id="myButton" type="submit">Add</button>
                         </span>
                     </div>
                 </form>
@@ -33,6 +33,6 @@
             } 
         else {
             $("#myButton").prop("disabled", false);
-        }})
+    }});
 </script>
 {% endblock %}
