@@ -14,9 +14,9 @@
                 <form method="post" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
                     <div class="input-group">
-                        <input name="quantity" type="number" min="1" max="999" class="form-control productamount" placeholder="Quantity">
+                        <input name="quantity" type="number" min="1" max="999" class="form-control" placeholder="Quantity">
                         <span class="input-group-btn">
-                            <button class="btn btn-success myButton" type="submit">Add</button>
+                            <button class="btn btn-success" type="submit">Add</button>
                         </span>
                     </div>
                 </form>
@@ -25,7 +25,7 @@
     {% endfor %}
 </div>
 
-<script>
+<!--<script>
     let problem = $(".productamount");
     problem.change(function() {
         if(!problem.val() || problem.val() === 0) {
@@ -34,5 +34,5 @@
         else {
             $(".myButton").prop("disabled", false);
     }});
-</script>
+</script>-->
 {% endblock %}
