@@ -63,7 +63,8 @@ def profile(request):
     if user.is_authenticated:
         ''' get the list of items that the user has purchased.'''
         profile = UserProfile.objects.get(user=user)
-        orders = Order.objects.filter(userprofile=profile)
+        #orders = Order.objects.filter(userprofile=profile)
+        orders = OrderLineItem.objects.all()
         print(orders)
 
     return render(request, 'profile.html', {'orders': orders})

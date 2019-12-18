@@ -5,10 +5,9 @@
     <p>Your email address is: {{user.email}}</p>
     <br>
     <p>This is a list of papers that you have purchased:</p>
-    {{ request.user.userprofile.order.product }}</p>
-    {% for order in orders %}
-         {{order.product.name}}
-         {{order.product.quantity}}
-         {{order.total}}
+    {{orders}}
+    {% for item in orders %}
+        {{ orders }}</p>
+        
     {% endfor %}
 {% endblock %}
