@@ -32,7 +32,7 @@ def logout(request):
 def login(request):
     """A view that manages the login form"""
     if request.method == 'POST':
-        #user_form = UserLoginForm(request.POST)
+        # user_form = UserLoginForm(request.POST)
         login_form = UserLoginForm(request.POST)
         # if user_form.is_valid():
         if login_form.is_valid():
@@ -49,7 +49,7 @@ def login(request):
                 login_form.add_error(
                     None, "Your username or password are incorrect")
     else:
-        #user_form = UserLoginForm()
+        # user_form = UserLoginForm()
         login_form = UserLoginForm()
 
     args = {'login_form': login_form}
