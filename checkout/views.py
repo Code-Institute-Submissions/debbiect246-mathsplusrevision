@@ -2,10 +2,11 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import MakePaymentForm, OrderForm
-from .models import OrderLineItem
+from .models import OrderLineItem, Order
 from django.conf import settings
 from django.utils import timezone
 from products.models import Product
+from accounts.models import UserProfile
 import stripe
 
 # Create your views here.
@@ -19,8 +20,14 @@ def checkout(request):
         payment_form = MakePaymentForm(request.POST)
 
         if order_form.is_valid() and payment_form.is_valid():
+
             order = order_form.save(commit=False)
             order.date = timezone.now()
+            order.save()
+            # creates new instance of Order, and attaches the logged in user profile to it
+
+            order.date = timezone.now()
+            # saves instance of Order
             order.save()
 
             cart = request.session.get('cart', {})
