@@ -26,10 +26,6 @@ def checkout(request):
             order.save()
             # creates new instance of Order, and attaches the logged in user profile to it
 
-            order.date = timezone.now()
-            # saves instance of Order
-            order.save()
-
             cart = request.session.get('cart', {})
             total = 0
             for id, quantity in cart.items():

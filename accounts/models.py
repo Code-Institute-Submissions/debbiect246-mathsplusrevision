@@ -11,6 +11,8 @@ class UserProfile(models.Model):
     personal information and order history
     """
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    # added line below to this model
+    user_orders = models.ManyToManyField(Product)
 
     def __str__(self):
         return self.user.username
