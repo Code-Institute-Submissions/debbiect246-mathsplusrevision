@@ -23,7 +23,7 @@ def add_to_cart(request, id):
     except ValueError:
         messages.error(request, "You must chose a quantity for this paper, ")
         messages.error(
-            request, "select the papers tab and choose a quanity to order.")
+            request, "select the papers tab and choose a quantity to order.")
         return render(request, "cart.html")
 
 
