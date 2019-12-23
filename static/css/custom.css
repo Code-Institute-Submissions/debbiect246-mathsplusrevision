@@ -32,13 +32,12 @@ footer {
     background-color: #c67605;
 }
 
-.jumbotron {
-    background: url("/media/images/ecommerce-header.jpg");
+#aboutbanner {
+    height: 100%;
+    width: 100%;
+    background-size: 50%;
     background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 10em;
-    filter: brightness(100%);
+
 }
 
 .product {
