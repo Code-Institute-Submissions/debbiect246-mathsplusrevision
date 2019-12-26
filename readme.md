@@ -1,5 +1,7 @@
 # [Maths Plus Revsion](https://maths-plus-revision.herokuapp.com/)
 
+![Image description](/UX/welcomepage.jpg)
+
 This is a revision app for  
 students taking the maths 11 plus
 13 plus and 16 plus exams.
@@ -7,31 +9,31 @@ students taking the maths 11 plus
 I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used by students and parents.
 
 Students can view and order one paper and its associated markscheme for free and then they can order extra papers and markschemes using stripe.
-The app was deployed to heroku and can be accessed by clicking on the title above.   Alternatively here is a link to the heroku app. <https://maths-plus-revision.herokuapp.com/>
+The app was deployed to heroku and can be accessed by clicking on the title above.   Alternatively here is a link to the [heroku app](<https://maths-plus-revision.herokuapp.com/>)
 
 ## UX
 
 ### User stories
 
-1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.  
-2. A user can see 11 plus, 13 plus and 16 plus papers to select from without logging in.
-3. A user can only purchase 11 plus, 13 plus or 16 plus papers if they are logged in.
-4. If a user attempts to buy these papers without login in, the app will direct them to login.
-5. Once logged in, the user can checkout items in the cart.
-6. A user will see a message on the screen stating that they are logged in.
-7. If a user does not have an account they will be directed to create one.
-8. Once a user has created an account, they will see a message on the screen informing them that their account has been successfully created.
-9. Checked out items will be paid for using credit or debit cards.
-10. The user will get an acknowledgement of payment.
-11. A user can access a blog on the app from the main menu.
-12. The blog will contain tips on learning maths and ideas on how to measure progress made.
-13. A user can comment on a blog and the moderator of the blog can decide on whether the comment can be put on the app for other users to see.
-14. A user can review papers purchased using the review button in the menu.
-15. The review button allows the user to give a star rating to a particular paper and to write a review for other users to see.
-16. All reviews and ratings are subject to moderation by the owner of the app.
-17. A user can contact the owner of the app using a contact form.
-18. The contact form will have fields for: title, full name, address, city or region, postcode, country.
-19. A user will submit the form using a contact button.
+1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.
+2. Users can choose to reset their password when needed.
+3. A user who has forgotten their password can be issued with a temporary password, go onto the site,then reset their password using a given link.
+4. A user can see 11 plus, 13 plus and 16 plus papers to select from without logging in.
+5. A user can only purchase 11 plus, 13 plus or 16 plus papers if they are logged in.
+6. If a user attempts to buy these papers without login in, the app will direct them to login.
+7. Once logged in, the user can checkout items in the cart.
+8. A user will see a message on the screen stating that they are logged in.
+9. If a user does not have an account they will be directed to create one.
+10. Once a user has created an account, they will see a message on the screen informing them that their account has been successfully created.
+11. A user can select items to be purchased and each item selected will be added to their cart.
+12. A user will be able to view all the items in their cart.
+13. A user can choose to checkout items using the checkout button.  At checkout a user will be asked for their details.
+14. Checked out items will be paid for using credit or debit cards.
+15. The user will get an acknowledgement of payment.
+16. A user can access a blog on the app from the main menu.
+17. The blog will contain tips on learning maths and ideas on how to measure progress made.
+18. A contact address appears on the about us page for users to use if required.
+19. A logged in or logged out user can see a blog which gives extra information on study skills and learning maths.
 
 ## Technologies Used
 
@@ -63,6 +65,61 @@ Heroku is a cloud platform that allows a developer to build, deliver, scale and 
 * [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)
 
 I used chrome developer tools to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
+
+## Databases used
+
+[SQLite3](https://www.sqlite.org/index.html) is a database provided by django and is the default database for django projects.
+[Postgres](https://www.postgresql.org/) is an open source relational database.
+
+Django does not determine a type of database to be used.  I decided to use two types of databases.
+
+## Data Models used
+
+In Django, data models are the databases which store data about the objects in the database.  The MathsRevisionPlus app used 2 models in addition to the django provided user model which stored details of users.  The models were:
+
+### Product model
+
+Name | Key in db | Validation| Fieldtype
+-----|----------| ----------|-------
+Name| name |maxlength=254|Charfield
+Description|description|no maxlength|Textfield
+Price|price|maxdigits=6, decimalplaces=2|Decimalfield
+Image|image|nomaxlength|Upload to images
+
+### Order model
+
+Name | Key in db | Validation| Fieldtype
+-----|----------| ----------|-------
+Fullname| full_name |maxlength=150|Charfield
+AddressLine1|address_line_1|maxlength=150|Charfield
+AddressLine2|address_line_2|maxlength=150, blank=True|Charfield
+Town/City|town_or_city|maxlength=150|Charfield
+County|county|max_length=150,blank=True|Charfield
+Postcode|postcode|max_length=10|Charfield
+Date ordered|date_ordered|default=date.time.today|DateField
+
+* An order is created first before order line item is created as orderline item connects to order using a foreign key.
+
+### OrderLineItem model
+
+Name | Key in db | Validation| Fieldtype
+-----|----------| ----------|-------
+Order| order |maxlength=150|Charfield
+Product|product|maxlength=150|Charfield
+Quantity|quantity|maxlength=150, blank=True|Charfield
+
+*An instance of orderlineitem is only created on receipt of an order by a user for each item the user selects and places in the cart so it uses a foreign key.
+
+### Posts model
+
+Name | Key in db | Validation| Fieldtype
+-----|----------| ----------|-------
+Title| title |maxlength=200|Charfield
+Content|content|no maxlength|Textfield
+Created date|createddate|dateformat = 6 chars|DateTimefield
+Published date|publisheddate|dateformat=6 chars|DateTimeField
+Views|views|no max length|IntegerField
+Tag|tag|maxlength=30|Textfield
 
 ## Testing
 
@@ -177,9 +234,9 @@ The following section describes the process I undertook to deploy this project t
 
 * Content:  All images were from photos of papers I took.
 
-* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only. 
+* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
 
-* Main header image on homepage shared by by Chuk Yong from Pixabay. 
+* Main header image on homepage shared by by Chuk Yong from Pixabay.
 
 ## Acknowledgements
 
