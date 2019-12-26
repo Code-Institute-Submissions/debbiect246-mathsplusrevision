@@ -35,8 +35,12 @@ footer {
 #aboutbanner {
     height: 100%;
     width: 100%;
-    background-size: 50%;
+    background-size: 100%;
     background-position: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
 
 }
 
