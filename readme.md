@@ -34,6 +34,7 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 17. The blog will contain tips on learning maths and ideas on how to measure progress made.
 18. A contact address appears on the about us page for users to use if required.
 19. A logged in or logged out user can see a blog which gives extra information on study skills and learning maths.
+20. A user can see how many times each post has been viewed together with the name of the author and the date the blog post was created.
 
 ## Design features
 
@@ -47,7 +48,6 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 * A logged out user can see all these items and can select papers to purchase, but they will need to either log in or register an account in order to purchase papers.
 
-
 * On logging in or creating an account a user is first take to the about us page which gives some information about the site.  A user will know that they are logged in as a message will appear on the top left of the screen.
 
 ![Image description](/UX/loggedinpage.jpg)
@@ -57,6 +57,9 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
 ![Image description](/UX/loggedoutpage.jpg)
+
+* The blog page can be seen by all users regardless of whether or not they are logged in.
+![Image descritption](/UX/blogpage.jpg)
 
 ## Technologies Used
 
@@ -255,11 +258,7 @@ The following section describes the process I undertook to deploy this project t
 
 ## Credits
 
-* Content:  All images were from photos of papers I took.
-
-* Media The photos used in this site were obtained from pixabay and pixels. All the photos used in my database were obtained from google images. These do not require creditation as they are used for educational purposes only.
-
-* Main header image on homepage shared by by Chuk Yong from Pixabay.
+* Media The photo used on the about us page was by Dawid Małecki on Unsplash.
 
 ## Acknowledgements
 
