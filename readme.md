@@ -35,6 +35,29 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 18. A contact address appears on the about us page for users to use if required.
 19. A logged in or logged out user can see a blog which gives extra information on study skills and learning maths.
 
+## Design features
+
+* The navbar must appear on every page so that the user can easily navigate between pages.
+
+* The navbar has the title of of the website, "Maths Plus Revision" on the left hand side.  If a user clicks on this they are taken to the Papers page.
+
+* The home page shows the following items in the navbar:  "MathsPlusRevision", "About Us", "Register", "Log in", "Blog", "Cart"
+
+![Image description](/UX/welcomepage.jpg)
+
+* A logged out user can see all these items and can select papers to purchase, but they will need to either log in or register an account in order to purchase papers.
+
+
+* On logging in or creating an account a user is first take to the about us page which gives some information about the site.  A user will know that they are logged in as a message will appear on the top left of the screen.
+
+![Image description](/UX/loggedinpage.jpg)
+
+* Once a paper has been selected and has been put in the cart, the user is taken to the checkout page. The cart icon will change to show the number of items in the cart and the user can then click on checkout to buy these papers.
+![Image description](/UX/cartpage.jpg)
+
+* A logged out user will see a logged out message on the screen to indicate that they are logged out.
+![Image description](/UX/loggedoutpage.jpg)
+
 ## Technologies Used
 
 * [HTML](https://www.w3schools.com/html/)
