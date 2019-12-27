@@ -33,9 +33,9 @@ footer {
 }
 
 #aboutbanner {
-    height: 100%;
-    width: 100%;
-    background-size: 100%;
+    height: 20%;
+    width: 80%;
+    /*background-size: 50%;*/
     background-position: center;
     display: block;
     margin-left: auto;
