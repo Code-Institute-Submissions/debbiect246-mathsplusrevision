@@ -58,7 +58,6 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 * If a user does not chose a quantity of papers and then hits add an error message will be shown and the user will be asked to click the paper tab and select a quantity of a paper to purchase.  Clicking on the paper tab at any time will allow the user to select more papers if needed.
 ![Image of cart error page](/UX/carterrorpage.jpg)
 
-
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
 ![Image description](/UX/loggedoutpage.jpg)
 
@@ -159,22 +158,22 @@ Testing was carried out by human beings.
 
  Log in page:
 
-Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.
-
-A message is shown that tells the user that they are logged in or that they have created an account.
+Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.  
+A message is shown that tells the user that they are logged in or that they have created an account. Result:  Message "you are logged in" appears.
 
 * Papers
- Check that one paper in each set of 11 plus, 13 plus and 16 plus is free to order.  Other sets of papers cost £10 each.
+ Check that one paper in each set of 11 plus, 13 plus and 16 plus is free to order.  Other sets of papers cost £10 each.  Result:  As expected.
 
 * User profile
  Check that the user profile for each registered order is up to date and accurate.
+ Result:  User profile appears.
 
 * Cart
-Check that the items purchased by users are transferred to the cart ready for checkout.
+Check that the items purchased by users are transferred to the cart ready for checkout.  Result:  Items are transferred to the cart.
 
 * Checkout
 
-Check that only the items in the users cart are available for checkout and that the checkout process works.  The user is shown a message to say that checkout has been successful for each order.
+Check that only the items in the users cart are available for checkout and that the checkout process works.  The user is shown a message to say that checkout has been successful for each order.  Result:  Checkout app shows price user has to pay and connection to stripe is successful using stripe credit card testcase 4242424242424242 with CVV set to any 3 number combination.  Also error message shows if user does not select a quantity of papers then clicks on checkout.
 
 ## Interesting bugs or problems I discovered during testing
 
@@ -184,7 +183,7 @@ After I pushed my app to heroku I needed to change some details and needed to re
 
 I also discovered that the cloud9 editor can be temperamental and had to log off and log back on several times on some occasions so that I could run my code.
 
-Development process of my project
+## Development process of my project
 
 I created a new folder for my project.  
 I created a virtual environment and installed django in this.
@@ -199,16 +198,15 @@ This app contained information about the products I was selling including models
 * search
 This app contained code for searching the app for a particular item and then displaying it on the screen.
 * accounts
-This app allowed a user to create an account.
+This app allowed a user to create an account and also contained a profile page for each user.
 * cart
 This app enabled a user to place items on the cart ready for purchase.
 * checkout
 This app enabled a user to checkout and pay for their purchases.
-* blog
-This app contained a blog with tips on how to successfully learn maths needed to pass the relevant exams, and finally
-* review
-This app allowed users to rate and review their purchases.
+* posts
+This app contained a blog with tips on how to successfully learn maths needed to pass the relevant exams and also contained a view counter so that views of each blog post were counted.
 
+* static folder
 I created a static folder for my images and my styles.css files and a templates folder for my templates.
 Next thing was to set up my base template folder with four files inside:  base.html,  and registration.html.
 
@@ -224,18 +222,19 @@ Finally I created a favicon for my app, using a freefavicom creator
 
 The following section describes the process I undertook to deploy this project to Heroku.
 
-1. I ensured that all required technologies were installed locally, as per the requirements.txtfile.
+1. I ensured that all required technologies were installed locally, as per the requirements.txtfile.  It was important to check that stripe was installed using ```pip install stripe``   This required a valid stripe account to be set up.
 2. I ensured that I had created a procfile indicating that my app was based on python.
-3. I used the bash terminal to log in to Heroku, using 'heroku login' command. Input Heroku login details.
-4. I then created a new Heroku app, using heroku apps:create appname command.
+3. I logged in to Heroku, using 'heroku login' command. Input Heroku login details.
+4. I then created a new Heroku app, using heroku ```apps:create appname command```.
 5. I pushed my project to github and enabled automatic link to heroku.  This took some time to set up as I had to make sure that my environmental variables were correct.
 6. I then logged into Heroku and selected newly created app.
-7. Then from the 'More' menu on the top right, I selected 'Restart all dynos'.
-8. I checked that my app was now deployed via Heroku
+7. I entered all my environment variables into the heroku panel including: secret key, public key - both of these were from stripe, the host name and the port.
+8. Then from the 'More' menu on the top right, I selected `Restart all dynos`.
+9. I checked that my app was now deployed via Heroku
 
 ## Breakdown of steps involved in creating my django app
 
- Initially I found django really difficult.  Although I had gone through the CI videos several times, it all seemed so disjointed, jumping around all over the place and so many files in different folders, some folders with the same name, so I spent many hours trying to work out how the code all fitted together.  I looked at you tube videos and 2 udemy courses which I viewed several times before getting django sorted out in my head.  The steps below indicate the steps I took to produce my app.
+ Initially I found django really difficult.  Although I had gone through the CI videos several times, it all seemed so disjointed, jumping around all over the place and so many files in different folders, some folders with the same name, so I spent many hours trying to work out how the code all fitted together.  I looked at you tube videos and 2 udemy courses which I viewed several times before getting django mostly sorted out in my head.  The steps below indicate the steps I took to produce my app.
 
  1. First I created a virtual environment and made a .gitignore file.  I then installed django.
  2. I put all my virtual environment files and database files into .gitignore so that they would not be pushed to github.
@@ -258,7 +257,9 @@ The following section describes the process I undertook to deploy this project t
  19. Finally I created my checkout app, which would enable a user to successfully pay for goods purchased.  I needed to create a stripe account, then install stripe ensuring that my public and private key were carefully stored in env.py and in turn, env.py was put in my .gitignore file.  Again the checkout app was added to the list of installed apps.
  20. At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
  21. I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
- 22. I pushed my app to heroku  at regular interavls, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
+ 22. I pushed my app to git and heroku  at regular intervals, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
+ 23. It was important to remember to make migrations and then migrate for all the models in each app ```python manage.py makemigrations``` and ```python manage.py migrate```.  
+ 24. Finally in order to get into the admin panel it was important to create a superuser ```python manage.py createsuperuser```
 
 ## Credits
 
