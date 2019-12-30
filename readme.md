@@ -1,6 +1,6 @@
 # [Maths Plus Revsion](https://maths-plus-revision.herokuapp.com/)
 
-![Image description](/UX/welcomepage.jpg)
+![Image of welcome page](/UX/welcomepage.jpg)
 
 This is a revision app for  
 students taking the maths 11 plus
@@ -44,16 +44,20 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 * The home page shows the following items in the navbar:  "MathsPlusRevision", "About Us", "Register", "Log in", "Blog", "Cart"
 
-![Image description](/UX/welcomepage.jpg)
+![Image of welcome page](/UX/welcomepage.jpg)
 
 * A logged out user can see all these items and can select papers to purchase, but they will need to either log in or register an account in order to purchase papers.
 
 * On logging in or creating an account a user is first take to the about us page which gives some information about the site.  A user will know that they are logged in as a message will appear on the top left of the screen.
 
-![Image description](/UX/loggedinpage.jpg)
+![Image of logged in page](/UX/loggedinpage.jpg)
 
 * Once a paper has been selected and has been put in the cart, the user is taken to the checkout page. The cart icon will change to show the number of items in the cart and the user can then click on checkout to buy these papers.
-![Image description](/UX/cartpage.jpg)
+![Image of cart page](/UX/cartpage.jpg)
+
+* If a user does not chose a quantity of papers and then hits add an error message will be shown and the user will be asked to click the paper tab and select a quantity of a paper to purchase.  Clicking on the paper tab at any time will allow the user to select more papers if needed.
+![Image of cart error page](/UX/carterrorpage.jpg)
+
 
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
 ![Image description](/UX/loggedoutpage.jpg)
