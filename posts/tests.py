@@ -6,7 +6,7 @@ from django.test import TestCase
 class PostTests(TestCase):
     """
     Here we'll define the tests that we'll run against our
-    Product model
+    Posts model
     """
 
     def test_str(self):
