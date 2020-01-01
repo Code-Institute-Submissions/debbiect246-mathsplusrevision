@@ -6,14 +6,24 @@ This is a revision app for
 students taking the maths 11 plus
 13 plus and 16 plus exams.
 
-I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used by students and parents.
+I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used mainly by parents of students who are taking these exams.
 
-Students can view and order one paper and its associated markscheme for free and then they can order extra papers and markschemes using stripe.
-The app was deployed to heroku and can be accessed by clicking on the title above.   Alternatively here is a link to the [heroku app](<https://maths-plus-revision.herokuapp.com/>)
+Parents can view and order one paper and its associated markscheme for free and then they can order extra papers and markschemes using stripe.
+The app was deployed to heroku and can be accessed by clicking on the title above.   Alternatively here is a link to the [heroku app here.](<https://maths-plus-revision.herokuapp.com/>)
 
 ## UX
 
 ### User stories
+
+####  User persona:
+
+The typical user is a parent aged in their mid 30s to mid 50s.  The user persona's name is Paul.  Paul is the parent of three children who are aged 10, 12 and 15.  Each child will soon take the 11+, 13+ and 16+ exam respectively in order to gain a place at a top independent school. Paul is keen for his children to receive an education at a top school as he knows that this means that his children are more likely to gain entry to excellent universities and better career paths, as well as being part of a privileged network.
+
+Paul has an income of around £300000 per year and is happy to pay school fees totalling around £80000 per year for his 3 children.   All his children have been preparing for their entrance exams over the last year and have been using published resources and other resources downloadable from other ecommerce sites.  This app gives Paul the opportunity to buy 11+, 13+ and 16+ papers which are not available elsewhere.
+
+Paul expects to see a range of papers to purchase which is updated on a regular basis. Paul also expects the welcome page to display some sort of image which gives him the message that this is the sort of site where he can trust the quality of the papers.
+
+Many users like Paul will use the app.  Below is a list of their expectations for the app.
 
 1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.
 2. Users can choose to reset their password when needed.
@@ -66,9 +76,7 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 ## Technologies Used
 
-* [HTML](https://www.w3schools.com/html/)
-
-Hypertext markup language is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
+* [HTML](https://www.w3schools.com/html/).  Hypertext markup language is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
 
 * [CSS](https://www.w3schools.com/Css/) stands for Cascading Style sheets which is a type of style language which sets out how the webpage should be styled. It allows the user to style the webpage in a particular way, making the UX richer and more meaningful for the user.
 
@@ -94,6 +102,8 @@ Heroku is a cloud platform that allows a developer to build, deliver, scale and 
 * [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)
 
 I used chrome developer tools to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
+
+I used [vscode](https://code.visualstudio.com/) as my coding editor.  I found it easy to use and used extensions for markup and also extensions to check the syntax of my code.
 
 ## Databases used
 
@@ -181,7 +191,7 @@ The most annoying bug I came across was when I was trying to push my code to her
 
 After I pushed my app to heroku I needed to change some details and needed to remember to set debug back to true in the cloud9 editor. However on more than one occasion I forgot to change debug back to false resulting in error messages.
 
-I also discovered that the cloud9 editor can be temperamental and had to log off and log back on several times on some occasions so that I could run my code.
+I attempted to use [travis integrated testing](https://travis-ci.com/) to run automated tests but unfortunately after 63 builds I still could not get my build to pass, so reluctantly I had to switch to manual testing.  
 
 ## Development process of my project
 
@@ -192,21 +202,34 @@ I then created a new django project, called mathsplusrevision in vscode as well 
 My settings.py file contained the list of apps that I created as I created my project.  The apps I created were
 
 * media
-This app would hold pictures of images for the products that would appear on the website.
+
+This app held pictures of images for the products that would appear on the website.
+
 * products
+
 This app contained information about the products I was selling including models for the database design.
+
 * search
+
 This app contained code for searching the app for a particular item and then displaying it on the screen.
+
 * accounts
+
 This app allowed a user to create an account and also contained a profile page for each user.
+
 * cart
 This app enabled a user to place items on the cart ready for purchase.
+
 * checkout
+
 This app enabled a user to checkout and pay for their purchases.
+
 * posts
+
 This app contained a blog with tips on how to successfully learn maths needed to pass the relevant exams and also contained a view counter so that views of each blog post were counted.
 
 * static folder
+
 I created a static folder for my images and my styles.css files and a templates folder for my templates.
 Next thing was to set up my base template folder with four files inside:  base.html,  and registration.html.
 
@@ -215,7 +238,7 @@ In my django virtual environment, I imported all the modules I would need and pu
 At this point I pushed my app to heroku in readiness for the final push to heroku later on. This meant I had to create my procifle and requirements file in order for the app to run.
 
 Lastly I checked that the entire app worked before doing a final push to heroku, making sure that my environment variables were correctly input into the heroku dashboard for the app and that debug was set to false so that the app was secure.
-My mentor had a look at my project and advised some changes, so I needed to set debug to true in my cloud9 editor whilst I made these changes, then I needed to remember to set debug back to false before pushing to heroku again.
+My mentor had a look at my project and advised some changes, so I needed to set debug to true in my vscode editor whilst I made these changes, then I needed to remember to set debug back to false before pushing to heroku again.
 Finally I created a favicon for my app, using a freefavicom creator
 
 ## Deployment
