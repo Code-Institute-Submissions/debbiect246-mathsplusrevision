@@ -13,9 +13,7 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 ## UX
 
-### User stories
-
-####  User persona:
+### User persona
 
 The typical user is a parent aged in their mid 30s to mid 50s.  The user persona's name is Paul.  Paul is the parent of three children who are aged 10, 12 and 15.  Each child will soon take the 11+, 13+ and 16+ exam respectively in order to gain a place at a top independent school. Paul is keen for his children to receive an education at a top school as he knows that this means that his children are more likely to gain entry to excellent universities and better career paths, as well as being part of a privileged network.
 
@@ -24,6 +22,8 @@ Paul has an income of around £300000 per year and is happy to pay school fees t
 Paul expects to see a range of papers to purchase which is updated on a regular basis. Paul also expects the welcome page to display some sort of image which gives him the message that this is the sort of site where he can trust the quality of the papers.
 
 Many users like Paul will use the app.  Below is a list of their expectations for the app.
+
+## User stories
 
 1. Each user has a unique username chosen by them and password and a user profile showing past and present orders.
 2. Users can choose to reset their password when needed.
@@ -286,7 +286,13 @@ The following section describes the process I undertook to deploy this project t
 
 ## Credits
 
-* Media The photo used on the about us page was by Dawid Małecki on Unsplash.
+* Media
+
+The photo used on the about us page was by Dawid Małecki on Unsplash.
+
+* Persona idea
+
+The idea of creating [a user persona](https://www.romanpichler.com/tools/the-persona-template/) came from a blog I read by Roman Pichler, a project management expert who specialises in digital products using Agile and Scrum methodologies.
 
 ## Acknowledgements
 
