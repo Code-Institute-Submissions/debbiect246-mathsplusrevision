@@ -21,8 +21,8 @@ def add_to_cart(request, id):
         return redirect(reverse('view_cart'))
 
     except ValueError:
-        messages.error(request, "You must chose a quantity for this paper, ")
-        messages.error(
+        messages.warning(request, "You must chose a quantity for this paper, ")
+        messages.warning(
             request, "select the papers tab and choose a quantity to order.")
         return render(request, "cart.html")
 
