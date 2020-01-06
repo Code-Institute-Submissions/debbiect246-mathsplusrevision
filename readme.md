@@ -170,13 +170,15 @@ Testing was carried out by human beings.
 
 Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.  
 A message is shown that tells the user that they are logged in or that they have created an account. Result:  Message "you are logged in" appears.
+Ensure that if user forgets password an email is sent to the users registered email address.
+Result:  email to reset password is sent to users registered email address.
 
 * Papers
  Check that one paper in each set of 11 plus, 13 plus and 16 plus is free to order.  Other sets of papers cost £10 each.  Result:  As expected.
 
 * User profile
  Check that the user profile for each registered order is up to date and accurate.
- Result:  User profile appears.
+ Result:  User profile appears showing user name and user email.
 
 * Cart
 Check that the items purchased by users are transferred to the cart ready for checkout.  Result:  Items are transferred to the cart.
@@ -185,13 +187,29 @@ Check that the items purchased by users are transferred to the cart ready for ch
 
 Check that only the items in the users cart are available for checkout and that the checkout process works.  The user is shown a message to say that checkout has been successful for each order.  Result:  Checkout app shows price user has to pay and connection to stripe is successful using stripe credit card testcase 4242424242424242 with CVV set to any 3 number combination.  Also error message shows if user does not select a quantity of papers then clicks on checkout.
 
+* Posts
+
+Ensure that posts added in admin panel appear on blog page.
+Result:  All posts added appear in blog page.
+
+* Models
+
+Ensure that all models are complete by using query set queries in the python shell.
+Result:  All models set up correctly and contain the correct data.
+
+* Urls
+Ensure that all nav bar items direct the user to the correct page and that the user knows which page they are on as there is a heading on each page telling them what page they are on and the navbar shade changes to a darker colour of blue when a particular item is chosen.
+Result:  All urls and views work as expected.
+
 ## Interesting bugs or problems I discovered during testing
 
 The most annoying bug I came across was when I was trying to push my code to heroku. I followed the instructions above but got an error 500 after each attempt. Despite looking at my code in detail I couldnt find anything wrong with it. My mentor suggested that my environment variables may be incorrect or missing, and once I looked into this I discovered that this was the case.  Once I corrected my mistakes with my environment variables, I was able to push to Heroku with no problems.
 
 After I pushed my app to heroku I needed to change some details and needed to remember to set debug back to true in the cloud9 editor. However on more than one occasion I forgot to change debug back to false resulting in error messages.
 
-I attempted to use [travis integrated testing](https://travis-ci.com/) to run automated tests but unfortunately after 63 builds I still could not get my build to pass, so reluctantly I had to switch to manual testing.  
+I attempted to use [travis integrated testing](https://travis-ci.com/) to run automated tests but unfortunately after 63 builds I still could not get my build to pass, so reluctantly I had to switch to manual testing.
+
+I was attempting to get user orders to show on my profile page, however after spending many hours on this and getting help from people in the CI slack community and CI tutors I was unable to get user orders to connect to a user's profile.  This is an area for future development and I will go back to this next month. Unfortunately time constraints mean that I cannot spend more time on this aspect of my project.
 
 ## Development process of my project
 
@@ -275,14 +293,22 @@ The following section describes the process I undertook to deploy this project t
  14. I created a templates folder inside my products app which contained the products.html file which contained the logic for rendering the products app to the website.
  15. During the creating of my products app I pushed to github and heroku after each bit of functionality had been added.
  16. I then created my search app so that products could be searched for by a user.  I made sure that this was included in my installed app list in my settings.py file and that the url patterns were in the urls.py file in the search app.  Views.py in the search app contained the logic for rendering results of the search to the screen.
- 17. The creation of my static folder was done prior to creating the products or search app so that I could style the way that the results of the search and products app displayed using the custom.css file which was held in the css directory.  Additionally in the static folder I created the font-awesome folder to contain the fonts I would use in the project and the js folder which contained the stripe file, for use when users wanted to buy a product.
- 18. I then created my carts app; firstly models, then views.py containing the views for this, then the urls.py containing the urls for the cart app.  Throughout the project I ensured that I used ``python manage.py make migrations`` to ensure that migrations of my models for each app were successful and then I used ``python manage.py migrate`` to ensure that the migrations were applied. I added the cart app to the list of installed apps in settings.py
- 19. Finally I created my checkout app, which would enable a user to successfully pay for goods purchased.  I needed to create a stripe account, then install stripe ensuring that my public and private key were carefully stored in env.py and in turn, env.py was put in my .gitignore file.  Again the checkout app was added to the list of installed apps.
- 20. At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
- 21. I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
- 22. I pushed my app to git and heroku  at regular intervals, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
- 23. It was important to remember to make migrations and then migrate for all the models in each app ```python manage.py makemigrations``` and ```python manage.py migrate```.  
- 24. Finally in order to get into the admin panel it was important to create a superuser ```python manage.py createsuperuser```
+ 17. I then created my favicon inserting a file for the favicon into my images folder and linking the image in my base.html file.
+ 18. I completed my testing manually due to problems with getting travis to work and django unit testing.  The result of my tests is shown in the test section.
+ 19. The creation of my static folder was done prior to creating the products or search app so that I could style the way that the results of the search and products app displayed using the custom.css file which was held in the css directory.  Additionally in the static folder I created the font-awesome folder to contain the fonts I would use in the project and the js folder which contained the stripe file, for use when users wanted to buy a product.
+ 20. I then created my carts app; firstly models, then views.py containing the views for this, then the urls.py containing the urls for the cart app.  Throughout the project I ensured that I used ``python manage.py make migrations`` to ensure that migrations of my models for each app were successful and then I used ``python manage.py migrate`` to ensure that the migrations were applied. I added the cart app to the list of installed apps in settings.py
+ 21. Finally I created my checkout app, which would enable a user to successfully pay for goods purchased.  I needed to create a stripe account, then install stripe ensuring that my public and private key were carefully stored in env.py and in turn, env.py was put in my .gitignore file.  Again the checkout app was added to the list of installed apps.
+ 22.At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
+ 23.I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
+ 24.I pushed my app to git and heroku  at regular intervals, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
+ 23.It was important to remember to make migrations and then migrate for all the models in each app ```python manage.py makemigrations``` and ```python manage.py migrate```.  
+ 24.Finally in order to get into the admin panel it was important to create a superuser ```python manage.py createsuperuser```
+
+## Future improvements
+
+ 1. Add user orders to profile page.
+ 2. Allow user to search blog using tags or words of interest.
+ 3. Add in a testimonial section where parents can post reviews of papers their children have used - the reviews would have to be moderated first before appearing on this page.
 
 ## Credits
 
