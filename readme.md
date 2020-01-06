@@ -1,6 +1,6 @@
 # [Maths Plus Revsion](https://maths-plus-revision.herokuapp.com/)
 
-![Image of welcome page](/UX/welcomepage.jpg)
+![Image of welcome page](/UserDesigns/welcomepage.jpg)
 
 This is a revision app for  
 students taking the maths 11 plus
@@ -60,19 +60,19 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 
 * On logging in or creating an account a user is first take to the about us page which gives some information about the site.  A user will know that they are logged in as a message will appear on the top left of the screen.
 
-![Image of logged in page](/UX/loggedinpage.jpg)
+![Image of logged in page](/UserDesigns/loggedinpage.jpg)
 
 * Once a paper has been selected and has been put in the cart, the user is taken to the checkout page. The cart icon will change to show the number of items in the cart and the user can then click on checkout to buy these papers.
-![Image of cart page](/UX/cartpage.jpg)
+![Image of cart page](/UserDesigns/cartpage.jpg)
 
 * If a user does not chose a quantity of papers and then hits add an error message will be shown and the user will be asked to click the paper tab and select a quantity of a paper to purchase.  Clicking on the paper tab at any time will allow the user to select more papers if needed.
-![Image of cart error page](/UX/carterrorpage.jpg)
+![Image of cart error page](/UserDesigns/carterrorpage.jpg)
 
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
-![Image description](/UX/loggedoutpage.jpg)
+![Image description](/UserDesigns/loggedoutpage.jpg)
 
 * The blog page can be seen by all users regardless of whether or not they are logged in.
-![Image descritption](/UX/blogpage.jpg)
+![Image descritption](/UserDesigns/blogpage.jpg)
 
 ## Technologies Used
 
@@ -322,4 +322,4 @@ The idea of creating [a user persona](https://www.romanpichler.com/tools/the-per
 
 ## Acknowledgements
 
-I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet or using the slack room or CI tutors to help me work out how to do something.
+I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet with only 20% of the time actually spent coding.  Hopefully next time I do a similar project things wont take so long and I will be better at sorting out any issues that arise!
