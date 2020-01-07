@@ -54,7 +54,7 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 
 * The home page shows the following items in the navbar:  "MathsPlusRevision", "About Us", "Register", "Log in", "Blog", "Cart"
 
-![Image of welcome page](/UX/welcomepage.jpg)
+![Image of welcome page](/UserDesigns/welcomepage.jpg)
 
 * A logged out user can see all these items and can select papers to purchase, but they will need to either log in or register an account in order to purchase papers.
 
