@@ -1,6 +1,6 @@
-# [Maths Plus Revsion](https://maths-plus-revision.herokuapp.com/)
+# [Maths Plus Revision](https://maths-plus-revision.herokuapp.com/)
 
-![Image of welcome page](/UserDesigns/welcomepage.jpg)
+![Image of welcome page](/wireframes/welcomepage.jpg)
 
 This is a revision app for  
 students taking the maths 11 plus
@@ -37,7 +37,7 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 10. Once a user has created an account, they will see a message on the screen informing them that their account has been successfully created.
 11. A user can select items to be purchased and each item selected will be added to their cart.
 12. A user will be able to view all the items in their cart.
-13. A user can choose to checkout items using the checkout button.  At checkout a user will be asked for their details.
+13. A user can choose to checkout items using the checkout button.  A user can amend items in their cart before checkout. At checkout a user will be asked for their details.
 14. Checked out items will be paid for using credit or debit cards.
 15. The user will get an acknowledgement of payment.
 16. A user can access a blog on the app from the main menu.
@@ -54,25 +54,25 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 
 * The home page shows the following items in the navbar:  "MathsPlusRevision", "About Us", "Register", "Log in", "Blog", "Cart"
 
-![Image of welcome page](/UserDesigns/welcomepage.jpg)
+![Image of welcome page](/wireframes/welcomepage.jpg)
 
 * A logged out user can see all these items and can select papers to purchase, but they will need to either log in or register an account in order to purchase papers.
 
 * On logging in or creating an account a user is first take to the about us page which gives some information about the site.  A user will know that they are logged in as a message will appear on the top left of the screen.
 
-![Image of logged in page](/UserDesigns/loggedinpage.jpg)
+![Image of logged in page](/wireframes/loggedinpage.jpg)
 
 * Once a paper has been selected and has been put in the cart, the user is taken to the checkout page. The cart icon will change to show the number of items in the cart and the user can then click on checkout to buy these papers.
-![Image of cart page](/UserDesigns/cartpage.jpg)
+![Image of cart page](/wireframes/cartpage.jpg)
 
 * If a user does not chose a quantity of papers and then hits add an error message will be shown and the user will be asked to click the paper tab and select a quantity of a paper to purchase.  Clicking on the paper tab at any time will allow the user to select more papers if needed.
-![Image of cart error page](/UserDesigns/carterrorpage.jpg)
+![Image of cart error page](/wireframes/carterrorpage.jpg)
 
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
-![Image description](/UserDesigns/loggedoutpage.jpg)
+![Image description](/wireframes/loggedoutpage.jpg)
 
 * The blog page can be seen by all users regardless of whether or not they are logged in.
-![Image descritption](/UserDesigns/blogpage.jpg)
+![Image descritption](/wireframes/blogpage.jpg)
 
 ## Technologies Used
 
@@ -83,17 +83,13 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 * [Django](https://www.djangoproject.com/)
 is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience.
 
-* django templating language
-
-The django templating language is a templating language which is used for rendering data in html templates and is used for communication between the front end and back end of an app.
-
 * [jquery](https://jquery.com/) is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
 
-* [python](https://www.python.org/psf-landing/) is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.  The version of Python I used in my app is 3.7
+* [Python](https://www.python.org/psf-landing/) is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.  The version of Python I used in my app is 3.7
 
 * [Postgres](https://www.postgresql.org/)
 
-I used Postgres for the models in my database, although sqlite3 was available in django. Mongodb is a document database that provides the user with the facility to create, read, update and delete documents in a database. Mongodb documents are stored in collections in json or bson format and this makes it easy to work with in Python and other programming languages.
+I used Postgres for the models in my database, although sqlite3 was available in django. This was because my app is deployed to heroku and heroku is an ephemeral file system so my data would disappear each time I logged into heroku! Postgres is an open source object-relational database system that provides the user with the facility to create, read, update and delete documents data.
 
 * Heroku
 
@@ -110,7 +106,7 @@ I used [vscode](https://code.visualstudio.com/) as my coding editor.  I found it
 [SQLite3](https://www.sqlite.org/index.html) is a database provided by django and is the default database for django projects.
 [Postgres](https://www.postgresql.org/) is an open source relational database.
 
-Django does not determine a type of database to be used.  I decided to use two types of databases.
+Django does not determine a type of database to be used.  I decided to use postgres as heroku is an ephemeral system meaning that data stored in SQLite would disappear each time I accessed the app!
 
 ## Data Models used
 
@@ -166,7 +162,71 @@ Testing was carried out by human beings.
 
 * Manual Testing
 
- Log in page:
+I tested each part of my user story to check it worked as expected.
+
+1. Each user has a unique username chosen by them and password and a user profile showing their login and email and a thank you message.
+Result:  works as expected.
+
+2. Users can choose to reset their password when needed.
+Result:  works as expected.
+
+3. A user who has forgotten their password can be issued with a temporary password, go onto the site,then reset their password using a given link.
+Result:  works as expected.
+
+4. A user can see 11 plus, 13 plus and 16 plus papers to select from without logging in.
+Result:  Works as expected.
+
+5. A user can only purchase 11 plus, 13 plus or 16 plus papers if they are logged in.
+Result:  Works as expected.
+
+6. If a user attempts to buy these papers without login in, the app will direct them to login.
+Result: Works as expected.  
+
+7. Once logged in, the user can checkout items in the cart.
+Result:  Works as expected.
+
+8. A user will see a message on the screen stating that they are logged in.
+Result:  Works as expected.
+
+9. If a user does not have an account they will be directed to create one.
+Result:  Works as expected.
+
+10. Once a user has created an account, they will see a message on the screen informing them that their account has been successfully created.
+Result:  Works as expected.
+
+11. A user can select items to be purchased and each item selected will be added to their cart.
+Result: Works as expected.
+
+12. A user will be able to view all the items in their cart.
+Result: Works as expected.
+
+13. A user can choose to checkout items using the checkout button.  A user can amend items in their cart before checkout. At checkout a user will be asked for their details.
+Result:  Works as expected.
+
+14. Checked out items will be paid for using credit or debit cards.
+Result: Works as expected with test credit card details supplied by stripe.
+
+15. The user will get an acknowledgement of payment.
+Result:  You have successfully paid message appears on screen.
+
+16. A user can access a blog on the app from the main menu.
+Result:  Blog item appears in navbar and user can click on it to see the blog.
+
+17. The blog will contain tips on learning maths and ideas on how to measure progress made.
+Result:  Items on learning maths are in blog.
+
+18. A contact address appears on the about us page for users to use if required.
+Result: Contact address is at bottom of "about us" page.
+
+19. A logged in or logged out user can see a blog which gives extra information on study skills and learning maths.
+Result:  Logged in and logged in users can see the blog page.
+
+20. A user can see how many times each post has been viewed together with the name of the author and the date the blog post was created.
+Result:  Blog views are shown next to each post.
+
+### Some additional tests
+
+* Log in page:
 
 Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.  
 A message is shown that tells the user that they are logged in or that they have created an account. Result:  Message "you are logged in" appears.
@@ -205,11 +265,11 @@ Result:  All urls and views work as expected.
 
 The most annoying bug I came across was when I was trying to push my code to heroku. I followed the instructions above but got an error 500 after each attempt. Despite looking at my code in detail I couldnt find anything wrong with it. My mentor suggested that my environment variables may be incorrect or missing, and once I looked into this I discovered that this was the case.  Once I corrected my mistakes with my environment variables, I was able to push to Heroku with no problems.
 
-After I pushed my app to heroku I needed to change some details and needed to remember to set debug back to true in the cloud9 editor. However on more than one occasion I forgot to change debug back to false resulting in error messages.
+After I pushed my app to heroku I needed to change some details and needed to remember to set debug back to true in the my coding editor - vscode.
 
 I attempted to use [travis integrated testing](https://travis-ci.com/) to run automated tests but unfortunately after 63 builds I still could not get my build to pass, so reluctantly I had to switch to manual testing.
 
-I was attempting to get user orders to show on my profile page, however after spending many hours on this and getting help from people in the CI slack community and CI tutors I was unable to get user orders to connect to a user's profile.  This is an area for future development and I will go back to this next month. Unfortunately time constraints mean that I cannot spend more time on this aspect of my project.
+I was attempting to get user orders to show on my profile page, however after spending many hours on this and getting help from people in the CI slack community and CI tutors I was unable to get user orders to connect to a user's profile.  This is an area for future development and I will go back to this next month. Unfortunately time constraints mean that I cannot spend more time on this aspect of my project but it will be something that I will return to in the future.
 
 ## Development process of my project
 
@@ -263,7 +323,7 @@ Finally I created a favicon for my app, using a freefavicom creator
 
 The following section describes the process I undertook to deploy this project to Heroku.
 
-1. I ensured that all required technologies were installed locally, as per the requirements.txtfile.  It was important to check that stripe was installed using ```pip install stripe``   This required a valid stripe account to be set up.
+1. I ensured that all required technologies were installed locally, as per the requirements.txtfile.  It was important to check that stripe was installed using ```pip install stripe```   This required a valid stripe account to be set up.
 2. I ensured that I had created a procfile indicating that my app was based on python.
 3. I logged in to Heroku, using 'heroku login' command. Input Heroku login details.
 4. I then created a new Heroku app, using heroku ```apps:create appname command```.
@@ -298,11 +358,11 @@ The following section describes the process I undertook to deploy this project t
  19. The creation of my static folder was done prior to creating the products or search app so that I could style the way that the results of the search and products app displayed using the custom.css file which was held in the css directory.  Additionally in the static folder I created the font-awesome folder to contain the fonts I would use in the project and the js folder which contained the stripe file, for use when users wanted to buy a product.
  20. I then created my carts app; firstly models, then views.py containing the views for this, then the urls.py containing the urls for the cart app.  Throughout the project I ensured that I used ``python manage.py make migrations`` to ensure that migrations of my models for each app were successful and then I used ``python manage.py migrate`` to ensure that the migrations were applied. I added the cart app to the list of installed apps in settings.py
  21. Finally I created my checkout app, which would enable a user to successfully pay for goods purchased.  I needed to create a stripe account, then install stripe ensuring that my public and private key were carefully stored in env.py and in turn, env.py was put in my .gitignore file.  Again the checkout app was added to the list of installed apps.
- 22.At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
- 23.I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
- 24.I pushed my app to git and heroku  at regular intervals, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
- 23.It was important to remember to make migrations and then migrate for all the models in each app ```python manage.py makemigrations``` and ```python manage.py migrate```.  
- 24.Finally in order to get into the admin panel it was important to create a superuser ```python manage.py createsuperuser```
+ 22. At the start of this process I ensured that created a media directory to store all the images of the papers on the website and ensured that the correct code was added to the settings.py file in order for the uploaded images to be stored in this directory.
+ 23. I created a super user using ``django-admin create superuser`` so that I could add in my products to the products model using the admin dashboard.
+ 24. I pushed my app to git and heroku  at regular intervals, I had linked my git hub repo to heroku so it was automatically pushed to heroku each time I made a change to the repo. As the app was working I hoped that the travis build would be fine but I was wrong.  Travis repeatedly failed, so I needed to resort to manual testing.
+ 25. It was important to remember to make migrations and then migrate for all the models in each app ```python manage.py makemigrations``` and ```python manage.py migrate```.  
+ 26. Finally in order to get into the admin panel it was important to create a superuser ```python manage.py createsuperuser```
 
 ## Future improvements
 
