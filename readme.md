@@ -69,37 +69,30 @@ Many users like Paul will use the app.  Below is a list of their expectations fo
 ![Image of cart error page](/wireframes/carterrorpage.jpg)
 
 * A logged out user will see a logged out message on the screen to indicate that they are logged out.
-![Image description](/wireframes/loggedoutpage.jpg)
+![Image of logged out page](/wireframes/loggedoutpage.jpg)
 
 * The blog page can be seen by all users regardless of whether or not they are logged in.
-![Image descritption](/wireframes/blogpage.jpg)
+![Image of blog page](/wireframes/blogpage.jpg)
 
 ## Technologies Used
 
-* [HTML](https://www.w3schools.com/html/).  Hypertext markup language is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
+* [HTML](https://www.w3schools.com/html/) or Hypertext markup language. HTML is used to create the structure of web pages. It consists of tags which tell the browser how to set out text and images on the page. Hypertext is the method by which you move around on the web, markups are the tags which set out the structure of the webpage, thus HTML is a language for web creation with its own structure and syntax. The data in the tags is read by the web browser enabling you to create any web page you like. In this project my templates are all written in HTML. There is a template for adding, deleting, editing and adding recipes as well as one for viewing information about each island. The base template sets out the way in which the website should look and information from this is used in each of the other templates.
 
 * [CSS](https://www.w3schools.com/Css/) stands for Cascading Style sheets which is a type of style language which sets out how the webpage should be styled. It allows the user to style the webpage in a particular way, making the UX richer and more meaningful for the user.
 
-* [Django](https://www.djangoproject.com/)
-is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience.
+* [Django](https://www.djangoproject.com/) is a web development framework that assists in building and maintaining quality web applications. Django helps eliminate repetitive tasks making the development process an easy and time saving experience.
 
 * [jquery](https://jquery.com/) is used to simplify DOM manipulation. Jquery is a javascript library that is used to provide interactivity on websites. The $ sign signals to the browser that jquery is being used.
 
-* [Python](https://www.python.org/psf-landing/) is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.  The version of Python I used in my app is 3.7
+* [Python](https://www.python.org/psf-landing/) is a high level programming language used for apps in many frameworks such as flask, pyramid and django. Python supports many programming paradigms and is object orientated and has a comprehensive set of libraries. Python is managed by a non profit organsation the Python software foundation.  The version of Python I used in my app is 3.7.
 
-* [Postgres](https://www.postgresql.org/)
+* I used [Postgres](https://www.postgresql.org/) for the models in my database, although sqlite3 was available in django. This was because my app is deployed to heroku and heroku is an ephemeral file system so my data would disappear each time I logged into heroku! Postgres is an open source object-relational database system that provides the user with the facility to create, read, update and delete documents data.
 
-I used Postgres for the models in my database, although sqlite3 was available in django. This was because my app is deployed to heroku and heroku is an ephemeral file system so my data would disappear each time I logged into heroku! Postgres is an open source object-relational database system that provides the user with the facility to create, read, update and delete documents data.
+* [Heroku](https://www.heroku.com/) is a cloud platform that allows a developer to build, deliver, scale and monitor apps. Heroku makes the experience of deploying an app relatively straightforward.
 
-* Heroku
+* I used [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/) to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
 
-Heroku is a cloud platform that allows a developer to build, deliver, scale and monitor apps. Heroku makes the experience of deploying an app relatively straightforward.
-
-* [Chrome Developer Tools](https://developers.google.com/web/tools/chrome-devtools/)
-
-I used chrome developer tools to work on my code. Chrome dev tools are a set of tools designed to give the developer tools to amend code in a testing environment in order to enhance the UX and functionality experience. I was also able to test the responsiveness of my app using these tools.
-
-I used [vscode](https://code.visualstudio.com/) as my coding editor.  I found it easy to use and used extensions for markup and also extensions to check the syntax of my code.
+* I used [vscode](https://code.visualstudio.com/) as my coding editor.  I found it easy to use and used extensions for markup and also extensions to check the syntax of my code.
 
 ## Databases used
 
@@ -382,4 +375,4 @@ The idea of creating [a user persona](https://www.romanpichler.com/tools/the-per
 
 ## Acknowledgements
 
-I received inspiration for this project from my mentor Simen Daehlin, fellow students especially family, friends and my teaching colleagues and school students were also very helpful in giving me feedback. I used the django documentation to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet with only 20% of the time actually spent coding.  Hopefully next time I do a similar project things wont take so long and I will be better at sorting out any issues that arise!
+I received inspiration for this project from my mentor [Simen Daehlin](https://www.linkedin.com/in/simendaehlin/), fellow students especially family, friends and my teaching colleagues at [JK Educate](https://www.jkeducate.co.uk/) and school students were also very helpful in giving me feedback.  The [Code Insitute videos](https://codeinstitute.net/)  were useful in giving me the basic way to go about creating different functionality in my app.  I used the [django documentation](https://docs.djangoproject.com/en/3.0/) to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet with only 20% of the time actually spent coding.  Hopefully next time I do a similar project things wont take so long and I will be better at sorting out any issues that arise!
