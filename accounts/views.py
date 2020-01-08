@@ -4,10 +4,9 @@ from django.urls import reverse
 from .forms import UserLoginForm, UserRegistrationForm
 from django.template.context_processors import csrf
 from django.contrib.auth.decorators import login_required
-from checkout.models import OrderLineItem
+from checkout.models import Order, OrderLineItem
 from products.models import Product
 from accounts.models import UserProfile
-from checkout.models import Order
 
 
 # Create your views here.
@@ -62,8 +61,8 @@ def profile(request):
     user = request.user
     if user.is_authenticated:
         ''' get the list of items that the user has purchased.'''
-        #my_user_profile = UserProfile.objects.filter(user=request.user)
-        #my_order = OrderLineItem.object.filter(user=user)
+        my_user_profile = UserProfile.objects.filter(user=request.user)
+        # my_order = Order.object.filter(product=Product)
         # context = {
         #    'my_order': myorder
 
@@ -71,7 +70,10 @@ def profile(request):
 
         #profile = UserProfile.objects.get(user=user)
         #orders = OrderLineItem.objects.filter(userprofile=profile)
-        orders = OrderLineItem.objects.all()
+        # orders = OrderLineItem.objects.all() restore this line later
+
+        # code from anna
+        orders = Order.objects.filter(userprofile=user)
 
         print(orders)
 
