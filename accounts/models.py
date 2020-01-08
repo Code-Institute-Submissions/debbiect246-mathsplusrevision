@@ -10,9 +10,7 @@ class UserProfile(models.Model):
     A user profile model for maintaining default
     personal information and order history
     """
-    user = models.OneToOneField(User, on_delete=models.CASCADE)
-    # added line below to this model
-    user_orders = models.ManyToManyField(Product)
+    user = models.OneToOneField(User, on_delete=models.CASCADE, unique=True)
 
     def __str__(self):
         return self.user.username

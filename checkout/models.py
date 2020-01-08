@@ -1,6 +1,7 @@
 from django.db import models
 from products.models import Product
 from accounts.models import UserProfile
+from django.contrib.auth.models import User
 
 
 # Checkout model created below
