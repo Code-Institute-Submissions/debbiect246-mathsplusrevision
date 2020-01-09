@@ -1,11 +1,9 @@
 # [Maths Plus Revision](https://maths-plus-revision.herokuapp.com/)
 
-![Image of welcome page](/wireframes/welcomepage.jpg) 
+![Image of welcome page](/wireframes/welcomepage.jpg)
 ![image of tablet welcome page](wireframes/tabletwelcomepage.jpg) ![image of phone welcome page](wireframes/phonewelcomepage.jpg)
 
-This is a revision app for  
-students taking the maths 11 plus
-13 plus and 16 plus exams.
+This is a revision app for students taking the maths 11 plus 13 plus and 16 plus exams.
 
 I designed a revision app for students who are studying for demanding 11 plus, 13 plus and 16 plus exams in maths.  The exams are hard work and currently there is no existing central resource for students to use.  Thus the idea was to put useful past and practice papers with markschemes and advice, together in this app.  The app is to be used mainly by parents of students who are taking these exams.
 
