@@ -261,19 +261,19 @@ After I pushed my app to heroku I needed to change some details and needed to re
 
 I attempted to use [travis integrated testing](https://travis-ci.com/) to run automated tests but unfortunately after 63 builds I still could not get my build to pass, so reluctantly I had to switch to manual testing.
 
-I was attempting to get user orders to show on my profile page, however after spending many hours on this and getting help from people in the CI slack community and CI tutors I was unable to get user orders to connect to a user's profile.  This is an area for future development and I will go back to this next month. Unfortunately time constraints mean that I cannot spend more time on this aspect of my project but it will be something that I will return to in the future.
+I was attempting to get user orders to show on my profile page, however after spending many hours on this and getting help from people in the CI slack community and CI tutors I was unable to get user orders to connect to a user's profile.  I managed to build a user profile but couldnt link it to user orders and thus couldnt write a view in my accounts app that displayed user orders.  I decided instead to put a thank you message on the profile page for users to see and invite them to re-visit the site at a future date if they had not found a set of papers that they wanted to buy.  I will be going back to this app later on this year and attempting to get user orders to show in the user profile.  Unfortunately time constraints mean that I cannot spend more time on this aspect of my project.
 
 ## Development process of my project
 
 I created a new folder for my project.  
 I created a virtual environment and installed django in this.
 
-I then created a new django project, called mathsplusrevision in vscode as well as a .gitignore folder ready to hold files that I didnt want to push to github.
-My settings.py file contained the list of apps that I created as I created my project.  The apps I created were
+I then created a new django project, called mathsplusrevision in vscode by typing ```django-admin startproject projectname .```  in the terminal as well as a .gitignore folder ready to hold files that I didnt want to push to github.  This .gitignore file held my environmental variables and the vscode settings that didnt need to be pushed to github.
+My settings.py file contained the list of apps that I created as I created my project.  The apps I created were accounts, posts, cart,checkout, search and products.  I created my apps using ```python manage.py startapp appname```.  I ran my app throughout the development process by typing ```python manage.py runserver``` each time I added some fucntionality to the project to check whether or not it was working as expected.
 
 * media
 
-This app held pictures of images for the products that would appear on the website.
+This folder held pictures of images for the products that would appear on the website.
 
 * products
 
@@ -304,12 +304,15 @@ I created a static folder for my images and my styles.css files and a templates 
 Next thing was to set up my base template folder with four files inside:  base.html,  and registration.html.
 
 Effects for the nav bar were put into my styles.css file which was in the static folder.
+
 In my django virtual environment, I imported all the modules I would need and put this in git ignore.  I then set up a stripe account and used the secret and publishable key from my env.py file.  I ensured that the keys could only be accessed from this and not on public display on github.  
 At this point I pushed my app to heroku in readiness for the final push to heroku later on. This meant I had to create my procifle and requirements file in order for the app to run.
 
 Lastly I checked that the entire app worked before doing a final push to heroku, making sure that my environment variables were correctly input into the heroku dashboard for the app and that debug was set to false so that the app was secure.
-My mentor had a look at my project and advised some changes, so I needed to set debug to true in my vscode editor whilst I made these changes, then I needed to remember to set debug back to false before pushing to heroku again.
-Finally I created a favicon for my app, using a freefavicom creator
+
+I created a favicon for my app, using a freefavicom creator and had a go at creating a user profile and having it linked to my orders database but unfortunately I ran out of time to complete this part of the app.
+
+I had created my wireframes earlier and was working from these when creating my app, but decided to add them in to a folder called wireframes at the top level of my app.
 
 ## Deployment
 
@@ -322,8 +325,17 @@ The following section describes the process I undertook to deploy this project t
 5. I pushed my project to github and enabled automatic link to heroku.  This took some time to set up as I had to make sure that my environmental variables were correct.
 6. I then logged into Heroku and selected newly created app.
 7. I entered all my environment variables into the heroku panel including: secret key, public key - both of these were from stripe, the host name and the port.
-8. Then from the 'More' menu on the top right, I selected `Restart all dynos`.
-9. I checked that my app was now deployed via Heroku
+8. The final push to heroku was harder than I thought!  I first had to set my debug to False in my settings.py file in the mathsplusrevision app. Then I had to do  ```python manage.py collectstatic```   to successfully transfer all the files heroku needed to run the app across to heroku.  
+9. I then had to put all my environmental settings in my heroku config vars for my project as shown below.
+
+* DATABASE_URL       xxxxxxxxxx
+* IP                 xxxxx
+* PORT               xxxxx
+* SECRET_KEY         xxxxxxxxx
+* STRIPE_PUBLISHABLE xxxxxxxxx
+* STRIPE_SECRET      xxxxxxxxx
+
+I checked that my app was now deployed via Heroku
 
 ## Breakdown of steps involved in creating my django app
 
