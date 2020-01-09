@@ -1,6 +1,7 @@
 # [Maths Plus Revision](https://maths-plus-revision.herokuapp.com/)
 
-![Image of welcome page](/wireframes/welcomepage.jpg)
+![Image of welcome page](/wireframes/welcomepage.jpg) 
+![image of tablet welcome page](wireframes/tabletwelcomepage.jpg) ![image of phone welcome page](wireframes/phonewelcomepage.jpg)
 
 This is a revision app for  
 students taking the maths 11 plus
