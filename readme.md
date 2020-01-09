@@ -269,7 +269,8 @@ I created a new folder for my project.
 I created a virtual environment and installed django in this.
 
 I then created a new django project, called mathsplusrevision in vscode by typing ```django-admin startproject projectname .```  in the terminal as well as a .gitignore folder ready to hold files that I didnt want to push to github.  This .gitignore file held my environmental variables and the vscode settings that didnt need to be pushed to github.
-My settings.py file contained the list of apps that I created as I created my project.  The apps I created were accounts, posts, cart,checkout, search and products.  I created my apps using ```python manage.py startapp appname```.  I ran my app throughout the development process by typing ```python manage.py runserver``` each time I added some fucntionality to the project to check whether or not it was working as expected.
+My settings.py file contained the list of apps that I created as I created my project.  The apps I created were accounts, posts, cart,checkout, search and products.  I created my apps using ```python manage.py startapp appname```.  I ran my app throughout the development process by typing ```python manage.py runserver```  each time I added some fucntionality to the project to check whether or not it was working as expected.
+I created a requirements file to hold details of all the packages needed to run my app, eg. pillow for images, stripe and whitenoise and I also created a Procfile.  As each package was added using ```pip install package```  it was important to remember to update my requirements file.
 
 * media
 
