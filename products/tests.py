@@ -6,8 +6,8 @@ from django.test import TestCase
 
 class ProductTests(TestCase):
     """
-    Here we'll define the tests that we'll run against our
-    Product model
+    Product model tests are shown below.
+    To run them use python manage.py test Product
     """
 
     def test_str(self):
