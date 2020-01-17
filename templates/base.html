@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Maths Plus Revision</title>
+    <!-- links to bootstrap, font awesome, css style sheet and media images are below -->
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/3.3.7/cerulean/bootstrap.min.css">
     <link rel="stylesheet" href="{% static 'font-awesome/css/font-awesome.min.css' %}">
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
@@ -14,7 +16,7 @@
     
 </head>
 <body>
-    <!-- Fixed masthead -->
+    <!-- Put the navbar at the top of the page in a fixed position -->
     <nav class="navbar navbar-masthead navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -26,6 +28,8 @@
                 </button>
                 <a class="navbar-brand" href="/">Maths Plus Revision</a>
             </div>
+
+            <!-- navbar controls what a user can see if they are logged in or not -->
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}
