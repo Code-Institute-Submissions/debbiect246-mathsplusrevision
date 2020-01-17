@@ -3,10 +3,14 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
+# just get username and password from the user at login.
+
 
 class UserLoginForm(forms.Form):
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
+
+# for a user to register they will need to fill in password twice.
 
 
 class UserRegistrationForm(UserCreationForm):
@@ -15,6 +19,8 @@ class UserRegistrationForm(UserCreationForm):
         label='Password Confirmation',
         widget=forms.PasswordInput
     )
+
+    # this shows the username, email, password for each user.
 
     class Meta:
         model = User

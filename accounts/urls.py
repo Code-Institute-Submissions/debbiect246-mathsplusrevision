@@ -2,6 +2,8 @@ from django.conf.urls import url, include
 from . import urls_reset
 from .views import index, register, profile, logout, login
 
+# url patterns for register, profile, logout, login, index and password reset.
+
 urlpatterns = [
     url(r'^register/$', register, name='register'),
     url(r'^profile/$', profile, name='profile'),
