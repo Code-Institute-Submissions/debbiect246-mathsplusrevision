@@ -43,7 +43,8 @@
                         <li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>
                         <li><a class="nav-link" href="{% url 'logout' %}">Log Out</a></li>
                         <li><a class="nav-link" href="{% url 'posts' %}">Blog</a></li>
-
+                        
+                        <!-- cart link added below -->
                         <li>
                             <a class="nav-link" href="{% url 'view_cart' %}">
                                 <i class="fa fa-shipping-cart"></i>Cart
@@ -52,6 +53,8 @@
                                 {% endif %}
                             </a>
                         </li>
+
+                        <!-- search bar added below -->
                         
                         <form action="{% url 'search' %}" method="get">
                             <input type="text" placeholder = "Search for papers" name="q">
@@ -67,6 +70,7 @@
                         <li><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
                         <li><a class="nav-link" href="{% url 'posts' %}">Blog</a></li>
 
+                        <!-- cart link added below-->
                         <li>
                             <a class="nav-link" href="{% url 'view_cart' %}">
                                 <i class="fa fa-shipping-cart"></i>Cart
@@ -75,6 +79,8 @@
                                 {% endif %}
                             </a>
                         </li>
+
+                        <!-- search bar added below -->
                         
                         <form action="{% url 'search' %}" method="get">
                             <input type="text" placeholder = "Search for papers" name="q">
@@ -89,7 +95,7 @@
         </div>
     </nav>
     <!--<p class="firstline"> Revision papers to help your child revise for their 11+ 13+ or 16+ math exam.</p>-->
-        
+    <!-- code to display messages generated for all apps-->  
     {% if messages %}
         <div class="alert alert-success">
             <div class="messages">
@@ -104,21 +110,20 @@
     </div>
     <footer>
         <div class="container">
-            <p>Copyright  D. Thompson December 2019</p>
+            <p>Copyright  D. Thompson January 2020</p>
         </div>
     </footer>
 
-    <!-- jQuery library -->
+    <!--  link to jQuery library -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
-    <!-- Popper JS -->
+    <!-- link to Popper JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 
-    <!-- Latest compiled JavaScript -->
+    <!--  Link to Latest compiled JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+    
     {% block head_js %}
     {% endblock head_js %}
 </body>
