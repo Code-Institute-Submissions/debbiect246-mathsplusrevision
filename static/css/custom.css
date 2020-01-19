@@ -1,6 +1,7 @@
 body {
-    font-family: Arial;
-    padding-top: 100px;
+    font-family: sans-serif;
+    padding-top: 10px;
+    background: blue;
 }
 
 footer {
@@ -12,7 +13,7 @@ footer {
 }
 
 .icon-bar {
-    background-color: #00295b;
+    background-color: #5b0040;
 }
 
 .accountform {
@@ -85,4 +86,8 @@ caption p {
 .blogpageheading {
     font-weight: bold;
     text-align: center;
+}
+
+form {
+    width: 50%;
 }
