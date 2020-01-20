@@ -109,7 +109,13 @@
         {% block content %} {% endblock %}
     </div>
     <footer>
-        <div class="container">
+        <div class="container-fluid text-center">
+            <!-- added a form for users to sign up to get more info on papers-->  
+            <form class="form-inline">Get more information on our papers:
+                <input type="email" class="form-control" size="50" placeholder="Email Address">
+                <button type="button" class="btn btn-warning">Sign Up</button>
+            </form>
+            <br>
             <p>Copyright  D. Thompson January 2020</p>
         </div>
     </footer>
