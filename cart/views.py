@@ -5,12 +5,13 @@ from django.contrib import messages
 
 
 def view_cart(request):
-    """A View that renders the cart contents page"""
+    """rendering the cart contents page"""
     return render(request, "cart.html")
 
 
 def add_to_cart(request, id):
-    """Add a quantity of the specified product to the cart"""
+    """Add a paper to the cart"""
+    """ try except loop ensures that user can only enter an integer quantity"""
     try:
         quantity = int(request.POST.get('quantity'))
 
@@ -29,12 +30,26 @@ def add_to_cart(request, id):
 
 def adjust_cart(request, id):
     """
-    Adjust the quantity of the specified product to the specified
-    amount
+    User can change their mind about the number of papers they want and
+    this is changed on the cart
     """
-    quantity = int(request.POST.get('quantity'))
-    cart = request.session.get('cart', {})
 
+    # post the amount to the cart and show result on screen
+    # try except loop means user must select an integer value for the items
+    # no other type of value will be accepted
+
+    try:
+        quantity = int(request.POST.get('quantity'))
+        cart = request.session.get('cart', {})
+    except ValueError:
+        messages.warning(
+            request, "You must chose an ammended quantity for this paper, ")
+        messages.warning(
+            request, "select a whole number of papers in the amend box please.")
+        return render(request, "cart.html")
+
+    # checks to see that quantity ordered is greater than 0 then puts items
+    # into cart ready for checkout
     if quantity > 0:
         cart[id] = quantity
 
