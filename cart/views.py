@@ -5,7 +5,7 @@ from django.contrib import messages
 
 
 def view_cart(request):
-    """rendering the cart contents page"""
+    """shows the cart contents page"""
     return render(request, "cart.html")
 
 
