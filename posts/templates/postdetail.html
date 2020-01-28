@@ -1,4 +1,4 @@
-<!--
+<!-- takes in details of new post -->
 {% extends "base.html" %}
 {% block content %}
     <div class="row">
@@ -13,10 +13,14 @@
             <h3>{{ post.title }}</h3>
             <div class="row">
                 <div class="col-xs-9">
+                    <!-- new post can be added in admin area of django only -->
+                    <!-- only certain things can added into posts database, title of post -->
+                    <!-- post description, actual post,  author name is always Debbie Thompson -->
                     <p>{{ post.content }}</p>
                     <p><span class="boldtext">Published on:</span> {{ post.published_date }} </p>
                     <p><span class="boldtext">Views:</span> {{post.views}}</p>
                     <p><span class="boldtext">Tag:</span> {{ post.tag }}</p>
+                    <!-- goes back to url for all posts on main urls page in mathsplusrevision project page -->
                     <a href="{% url 'get_posts' %}" class="btn btn-info">Back to Blog</a>
                     
                     <hr>
