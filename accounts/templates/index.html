@@ -1,28 +1,48 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<!--<div class="container-fluid parallax"></div>-->
 
-<div class="mt-5 mb-5 pt-5 pb-5 text-center">
-  <div class="container">
-    <h4> About Us</h4></p>
-    <p class="firstline">We are a group of maths teachers who have had over 24 years experience teaching pupils taking the</p>
-    <p class="firstline"> 11+, 13+ and 16+ entrance exams.  Our success rate using these papers has been 95%.</p>
-    <br>   
-  </div>
-  <div class="container">
+<div class="container">
+    <div class="row">
 
-    <div id="aboutbanner">
-      <img src='/media/images/rulerandpaper.jpg' class="img-responsive" alt="learning banner">
+      <div class="col-md-10 col-sm-9 text-center font-weight-bold">
+        <h4> About Us</h4>
+            
+          <!-- formatted heading for this page -->
+      </div>
     </div>
-          
-  </div>
 
-  <div class="container">
-    <br>
-    <p class="firstline">Company information:  Our registered address is MathsPlusRevision, 123 Abacus Street, </p>
-    <p class="firstline">London, NW11MA.</p>
-  </div>
+    <div class="row">
+        <div class="col-md-10 col-sm-9 col-lg-12 text-center">
+          <p class="text-center">We are a group of maths teachers who have had over 24 years experience teaching pupils taking the</p>
+          <p class="text-center">11+, 13+ and 16+ entrance exams.  Our success rate using these papers has been 95%.</p>
+        </div>
+    </div>
 
+</div>   
+
+<div class="container-fluid jumbotron jumbotron-fluid">
+  
+
+  <div class="container-fluid text-center">
+  <img src='/media/images/rulerandpaper.jpg' class="img-fluid center-block" alt="ruler and pencil">
+
+    <!-- made image responsive in bootstrap 4 using img-fluid class-->
+    <h6 class="display-5">The best solution for 11+, 13+ and 16+ maths revision</h6>
+    <p class="pb-4">Our papers are written by teachers and tested by students</p>
+  </div>
+    
 </div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-sm-9 col-lg-12"> 
+    <br>
+    <p class="text-center"><strong>Company information:  Our registered address is MathsPlusRevision,</strong> </p>
+    <p class="text-center"><strong>223 Abacus Street, London, NW11MA.</strong></p>
+    </div>
+  </div>  
+</div>
+
+
 {% endblock %}
