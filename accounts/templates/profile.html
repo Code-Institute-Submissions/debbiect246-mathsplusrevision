@@ -1,18 +1,22 @@
+<!-- gets base.html info -->
 {% extends "base.html" %}
+<!-- content for this page in block content -->
 {% block content %}
-    <h2 style="text-align:center">Your Profile</h2>
-    <h2>Good to see you!</h2>
-    <p>You are logged in as {{ user.username }} </p>
-    <p>Your email address is {{ user.email }}</p>
-    <br>
+    <!-- restyled in bootstrap 4 - shows logged in user name and email -->
     <div class="container">
+        <h2 style="text-align:center">Your Profile</h2>
+        <h2>Good to see you!</h2>
+        <p>You are logged in as {{ user.username }} </p>
+        <p>Your email address is {{ user.email }}</p>
+        <br>
+    </div>
+    <div class="container">
+        <!-- closing message-->
         <p>Thank you for looking at our papers</p>
         <p>Maybe you have bought some.  If so, thank you.</p>
         <p>If not, then maybe next time there will be some new papers</p>
         <p>Either way, please do come back and check the site regularly</p>
     </div>
             
-    
-      
-    
+<!-- end of block content -->    
 {% endblock %}
