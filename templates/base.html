@@ -80,7 +80,7 @@
                             </a>
                         </li>
 
-                        <!-- search bar added below -->
+                        <!-- search bar added to logged out navbar below -->
                         
                         <form action="{% url 'search' %}" method="get">
                             <input type="text" placeholder = "Search for papers" name="q">
@@ -94,7 +94,7 @@
             </div>
         </div>
     </nav>
-    <!--<p class="firstline"> Revision papers to help your child revise for their 11+ 13+ or 16+ math exam.</p>-->
+    
     <!-- code to display messages generated for all apps-->  
     {% if messages %}
         <div class="alert alert-success">
@@ -109,14 +109,17 @@
         {% block content %} {% endblock %}
     </div>
     <footer>
-        <div class="container-fluid text-center">
-            <!-- added a form for users to sign up to get more info on papers-->  
-            <form class="form-inline">Get more information on our papers:
-                <input type="email" class="form-control" size="50" placeholder="Email Address">
-                <button type="button" class="btn btn-warning">Sign Up</button>
-            </form>
-            <br>
-            <p>Copyright  D. Thompson January 2020</p>
+        <div class="container">
+            <div class="row">
+                <!-- added a form for users to sign up to get more info on papers-->  
+                <form class="form-inline">Get more information on our papers:
+                    <input type="email" class="form-control" size="50" placeholder="Email Address">
+                    <button type="button" class="btn btn-warning">Sign Up</button>
+                </form>
+            </div>
+            <div class="row">
+                <p class="copyright"><strong>Copyright  D. Thompson January 2020</strong></p>
+            </div>
         </div>
     </footer>
 
