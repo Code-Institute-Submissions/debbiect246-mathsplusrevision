@@ -1,15 +1,23 @@
+<!-- get info from base.html for this page so that it displays like other pages-->
 {% extends "base.html" %}
+<!-- load up tags for bootstrap 4-->
 {% load bootstrap_tags %}
+<!-- content for this page-->
 {% block content %}
-    <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
-        <fieldset class="form-group">
-            <legend>Login</legend>
-            {% csrf_token %}
-            {{ login_form | as_bootstrap }}
-            
-             <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
-             
-            <button type="submit" class="btn btn-primary">Login</button>
-        </fieldset>
-    </form>
+    <!-- set up bootstrap 4 container for login form -->
+    <div class="container">
+        <!-- login form for user to login-->
+        <form method="post" action="{% url 'login' %}?next={{ next }}" class="accountform">
+            <fieldset class="form-group">
+                <legend>Login</legend>
+                <!-- csrf token got for security -->
+                {% csrf_token %}
+                {{ login_form | as_bootstrap }}
+                <!-- link to password reset form if user has forgotten password -->
+                <p><a href="{% url 'password_reset' %}">Forgot my password</a></p>
+                <!-- submit button -->
+                <button type="submit" class="btn btn-primary">Login</button>
+            </fieldset>
+        </form>
+    </div>
 {% endblock %}
