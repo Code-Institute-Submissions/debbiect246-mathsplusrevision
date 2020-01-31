@@ -1,10 +1,16 @@
+''' imported all django imports for the model to work, model
+product model which checkout model pulls data from,
+django User profile model so that only logged in user can checkout items
+and the user profile for keeping track of individual user orders'''
+
 from django.db import models
 from products.models import Product
 from accounts.models import UserProfile
 from django.contrib.auth.models import User
 
 
-# Checkout model created below
+'''Checkout model  reated below
+consists of name, phone number, address, date'''
 
 
 class Order(models.Model):
@@ -22,6 +28,9 @@ class Order(models.Model):
 
     def __str__(self):
         return "{0}-{1}-{2}".format(self.id, self.date, self.full_name)
+
+
+''' orderline model keeps track of the items in the order'''
 
 
 class OrderLineItem(models.Model):
