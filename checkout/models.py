@@ -10,7 +10,8 @@ from django.contrib.auth.models import User
 
 
 '''Checkout model  reated below
-consists of name, phone number, address, date'''
+consists of name, phone number, address, date, userprofile - created
+to keep track of individual user orders.'''
 
 
 class Order(models.Model):
