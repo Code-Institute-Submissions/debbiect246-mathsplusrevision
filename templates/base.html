@@ -37,6 +37,7 @@
                 <!--move the items in the navbar to the right-->
                 <ul class="navbar-nav ml-auto">
                     <!-- only show the nav items below if the user is logged in -->
+                    <!-- items are products link, about us link, user profile link, log out link and blog link -->
                     {% if user.is_authenticated %}
                         <li><a class="nav-link" href="{% url 'products' %}">Papers</a></li>
                         <li><a class="nav-link" href="{% url 'index' %}">AboutUs</a></li>
@@ -64,10 +65,12 @@
 
                     {%  else %}
                         <!-- show the following navbar items if the user is not logged in-->
+                        <!-- user sees log in link, register link, blog link, papers link, products link-->
+                        <!-- if user tries to buy papers without being logged in they are taken to register page-->
                         <li><a class="nav-link" href="{% url 'products' %}">Papers</a></li>
                         <li><a class="nav-link" href="{% url 'index' %}">AboutUs</a></li>
-                        <!--<li><a class="nav-link" href="{% url 'profile' %}">Profile</a></li>-->
                         <li><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
+                        <li><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                         <li><a class="nav-link" href="{% url 'posts' %}">Blog</a></li>
 
                         <!-- cart link added below-->
