@@ -4,8 +4,9 @@ from django.db import models
 
 
 # Create your models here.
-# model for products contains information about the name of each paper, its description, 
-#its price and an image for each paper.
+# model for products contains information about the name of each paper, its description,
+# its price and an image for each paper.
+# items can be added in the admin section of django by programmer
 
 class Product(models.Model):
     name = models.CharField(max_length=254, default='')
