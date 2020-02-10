@@ -1,7 +1,7 @@
 from django.conf.urls import url, include
 from .views import all_products
 
-# url patterns for products page
+# url pattern for products page
 
 urlpatterns = [
 
