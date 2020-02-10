@@ -49,7 +49,7 @@ def adjust_cart(request, id):
         return render(request, "cart.html")
 
     # checks to see that quantity ordered is greater than 0 then puts items
-    # into cart ready for checkout
+    # into cart ready for checkout then display the cart page with amended order included.
     if quantity > 0:
         cart[id] = quantity
 
