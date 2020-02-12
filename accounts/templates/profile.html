@@ -4,7 +4,8 @@
 {% block content %}
     <!-- restyled in bootstrap 4 - shows logged in user name and email -->
     <div class="container">
-        <h2 style="text-align:center">Your Profile</h2>
+        <h2 style="text-align:center">Your Profile</h2> 
+        <!-- greeting for logged in user -->
         <h2>Good to see you!</h2>
         <p>You are logged in as {{ user.username }} </p>
         <p>Your email address is {{ user.email }}</p>
@@ -16,7 +17,8 @@
         <p>Maybe you have bought some.  If so, thank you.</p>
         <p>If not, then maybe next time there will be some new papers</p>
         <p>Either way, please do come back and check the site regularly</p>
+        <p>Please do sign up for our newsletter for up to date information on new papers</p>
     </div>
             
-<!-- end of block content -->    
+<!-- end of this page content, rest of content comes from base.html file -->    
 {% endblock %}
