@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,26 +16,27 @@
     <!-- link to css file -->
     <link rel="stylesheet" href="{% static 'css/custom.css' %}">
 
-    <!-- link to media/images folder -->
+    <!-- link to media/images folder for favicon image -->
     <link rel="icon" type="image/png" href=" /media/images/bookfavicon.png" />
       
 </head>
 <body>
     <!-- Put the navbar at the top of the page in a fixed position -->
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-        <!-- now put in the Logo and name of the website -->
-        <a class="navbar-brand" href="{% url 'products' %}">Maths Plus Revision <i class="fa fa-plus"></i></a>
+    
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+            <!-- now put in the Logo and name of the website -->
+            <a class="navbar-brand" href="{% url 'products' %}">Maths Plus Revision <i class="fa fa-plus"></i></a>
         
-        <!-- put in the collapsible button for the website -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-            <span class="navbar-toggler-icon"></span>
-        </button>    
+            <!-- put in the collapsible button for the website which displays on small screens only -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>    
 
             <!-- navbar controls what a user can see if they are logged in or not -->
             <!--<div id="navbar" class="navbar-collapse collapse">-->
             <div class="collapse navbar-collapse" id="collapsibleNavbar">
                 <!--move the items in the navbar to the right-->
-                <ul class="navbar-nav ml-auto">
+                <ul class="navbar-nav ml-auto py-0">
                     <!-- only show the nav items below if the user is logged in -->
                     <!-- items are products link, about us link, user profile link, log out link and blog link -->
                     {% if user.is_authenticated %}
@@ -45,10 +46,10 @@
                         <li><a class="nav-link" href="{% url 'logout' %}">Log Out</a></li>
                         <li><a class="nav-link" href="{% url 'posts' %}">Blog</a></li>
                         
-                        <!-- cart link added below -->
+                        <!-- cart link added below --> 
                         <li>
                             <a class="nav-link" href="{% url 'view_cart' %}">
-                                <i class="fa fa-shipping-cart"></i>Cart
+                                <i class="fa fa-shopping-cart"></i>Cart
                                 {% if product_count > 0 %}
                                 <label class="badge badge-warning">{{ product_count }}</label>
                                 {% endif %}
@@ -59,7 +60,7 @@
                         
                         <form action="{% url 'search' %}" method="get">
                             <input type="text" placeholder = "Search for papers" name="q">
-                                 <button type="search"><i class="fa fa-search"></i></button>
+                            <button type="search"><i class="fa fa-search"></i></button>
                         </form>
                         
 
@@ -68,7 +69,7 @@
                         <!-- user sees log in link, register link, blog link, papers link, products link-->
                         <!-- if user tries to buy papers without being logged in they are taken to register page-->
                         <li><a class="nav-link" href="{% url 'products' %}">Papers</a></li>
-                        <li><a class="nav-link" href="{% url 'index' %}">AboutUs</a></li>
+                        <li><a class="nav-link" href="{% url 'index' %}">About Us</a></li>
                         <li><a class="nav-link" href="{% url 'login' %}">Log In</a></li>
                         <li><a class="nav-link" href="{% url 'register' %}">Register</a></li>
                         <li><a class="nav-link" href="{% url 'posts' %}">Blog</a></li>
@@ -76,18 +77,19 @@
                         <!-- cart link added below-->
                         <li>
                             <a class="nav-link" href="{% url 'view_cart' %}">
-                                <i class="fa fa-shipping-cart"></i>Cart
+                                <i class="fa fa-shopping-cart"></i>Cart
+                                    
                                 {% if product_count > 0 %}
-                                <label class="badge badge-warning">{{ product_count }}</label>
+                                    <label class="badge badge-warning">{{ product_count }}</label>
                                 {% endif %}
                             </a>
                         </li>
 
-                        <!-- search bar added to logged out navbar below -->
+                        <!-- search bar added to navbar below -->
                         
                         <form action="{% url 'search' %}" method="get">
                             <input type="text" placeholder = "Search for papers" name="q">
-                                 <button type="search"><i class="fa fa-search"></i></button>
+                            <button type="search"><i class="fa fa-search"></i></button>
                         </form>
 
                     {% endif %}
@@ -95,8 +97,8 @@
                     
                 </ul>
             </div>
-        </div>
-    </nav>
+        
+        </nav>
     
     <!-- code to display messages generated for all apps-->  
     {% if messages %}
@@ -115,7 +117,7 @@
         <div class="container">
             <div class="row">
                 <!-- added a form for users to sign up to get more info on papers-->  
-                <form class="form-inline">Get more information on our papers:
+                <form class="form-inline center">Get more information on our papers:
                     <input type="email" class="form-control" size="50" placeholder="Email Address">
                     <button type="button" class="btn btn-warning">Sign Up</button>
                 </form>

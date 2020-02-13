@@ -33,17 +33,17 @@ footer {
     background-color: #c67605;
 }
 
-#aboutbanner {
-    height: 20%;
-    width: 80%;
+
+/*#aboutbanner {
+    height: 50%;
+    width: 100%;
     background-size: 50%;
     background-position: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    display: flex;
+    justify-content: center;
 
 
-}
+}*/
 
 .product {
     background-size: contain;
@@ -90,4 +90,51 @@ footer {
 
 form {
     width: 50%;
+}
+
+.copyright {
+    text-align: center;
+}
+
+/* The hero image for the about page */
+.jumbotron {
+
+    background: url("/media/images/rulerandpaper.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Place text in the middle of the image */
+.hero-text {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+}
+
+.navbar {
+    min-height: 20px;
+}
+
+.navbar-brand {
+    padding: 0 15px;
+    height: 80px;
+    line-height: 80px;
+}
+
+.navbar-toggle {
+    /* (80px - button height 34px) / 2 = 23px */
+    margin-top: 23px;
+    padding: 9px 10px !important;
+}
+
+@media (min-width: 768px) {
+    .navbar-nav>li>a {
+        /* (80px - line-height of 27px) / 2 = 26.5px */
+        padding-top: 26.5px;
+        padding-bottom: 26.5px;
+        line-height: 27px;
+    }
 }
