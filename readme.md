@@ -16,7 +16,7 @@ The app was deployed to heroku and can be accessed by clicking on the title abov
 
 The typical user is a parent aged in their mid 30s to mid 50s.  The user persona's name is Paul.  Paul is the parent of three children who are aged 10, 12 and 15.  Each child will soon take the 11+, 13+ and 16+ exam respectively in order to gain a place at a top independent school. Paul is keen for his children to receive an education at a top school as he knows that this means that his children are more likely to gain entry to excellent universities and better career paths, as well as being part of a privileged network.
 
-Paul has an income of around £300000 per year and is happy to pay school fees totalling around £80000 per year for his 3 children.   All his children have been preparing for their entrance exams over the last year and have been using published resources and other resources downloadable from other ecommerce sites.  This app gives Paul the opportunity to buy 11+, 13+ and 16+ papers which are not available elsewhere.
+   All his children have been preparing for their entrance exams over the last year and have been using published resources and other resources downloadable from other ecommerce sites.  This app gives Paul the opportunity to buy 11+, 13+ and 16+ papers which are not available elsewhere.
 
 Paul expects to see a range of papers to purchase which is updated on a regular basis. Paul also expects the welcome page to display some sort of image which gives him the message that this is the sort of site where he can trust the quality of the papers.
 
@@ -163,7 +163,7 @@ Result:  works as expected.
 Result:  works as expected.
 
 3. A user who has forgotten their password can be issued with a temporary password, go onto the site,then reset their password using a given link.
-Result:  works as expected.
+Result:  does not work as expected.  I spent a long time trying to get reset password to work but kept getting errors that I couldnt sort out, so a user would need to set up a new account if they forgot their password.  In the future I hope to sort this out but I am almost out of time now to sort this out and having spent hours on this I am rapidly running out of hours and cannot justify more time spent sorting this out.
 
 4. A user can see 11 plus, 13 plus and 16 plus papers to select from without logging in.
 Result:  Works as expected.
@@ -230,7 +230,7 @@ Result:  email to reset password is sent to users registered email address.
 
 * User profile
  Check that the user profile for each registered order is up to date and accurate.
- Result:  User profile appears showing user name and user email.
+ Result:  User profile appears showing user name and user email.  I was unable to pull in orders from the backend to show to the user.
 
 * Cart
 Check that the items purchased by users are transferred to the cart ready for checkout.  Result:  Items are transferred to the cart.
@@ -251,9 +251,11 @@ Result:  All models set up correctly and contain the correct data.
 
 * Urls
 Ensure that all nav bar items direct the user to the correct page and that the user knows which page they are on as there is a heading on each page telling them what page they are on and the navbar shade changes to a darker colour of blue when a particular item is chosen.
-Result:  All urls and views work as expected.
+Result:  All urls and views work as expected except the reset password url.
 
 ## Interesting bugs or problems I discovered during testing
+
+Initially I used a virtual enviroment created from my vscode editor.  However this somehow got lost a few months into the project.  I spoke with a CI tutor who advised me to use the pipenv tool to set up a virtual environment for my project.  This was great and got me back on track with my project.
 
 The most annoying bug I came across was when I was trying to push my code to heroku. I followed the instructions above but got an error 500 after each attempt. Despite looking at my code in detail I couldnt find anything wrong with it. My mentor suggested that my environment variables may be incorrect or missing, and once I looked into this I discovered that this was the case.  Once I corrected my mistakes with my environment variables, I was able to push to Heroku with no problems.
 
@@ -266,7 +268,7 @@ I was attempting to get user orders to show on my profile page, however after sp
 ## Development process of my project
 
 I created a new folder for my project.  
-I created a virtual environment and installed django in this.
+I created a virtual environment and installed django in this.  The first virtual environment got lost by the vscode editor so with the help of a CI tutor I was able to create a new virtual environment using the pipenv tool.  The virtual environment was necessary to keep all my work on my project isolated from other projects that I was working on.
 
 I then created a new django project, called mathsplusrevision in vscode by typing ```django-admin startproject projectname .```  in the terminal as well as a .gitignore folder ready to hold files that I didnt want to push to github.  This .gitignore file held my environmental variables and the vscode settings that didnt need to be pushed to github.
 My settings.py file contained the list of apps that I created as I created my project.  The apps I created were accounts, posts, cart,checkout, search and products.  I created my apps using ```python manage.py startapp appname```.  I ran my app throughout the development process by typing ```python manage.py runserver```  each time I added some fucntionality to the project to check whether or not it was working as expected.
@@ -286,7 +288,7 @@ This app contained code for searching the app for a particular item and then dis
 
 * accounts
 
-This app allowed a user to create an account and also contained a profile page for each user.
+This app allowed a user to create an account and also contained a profile page for each user.  This app was reused from the CI module on django ecommerce project, which I had followed previously.  Authorship of this app is credited to CI.
 
 * cart
 This app enabled a user to place items on the cart ready for purchase.
@@ -312,6 +314,8 @@ At this point I pushed my app to heroku in readiness for the final push to herok
 Lastly I checked that the entire app worked before doing a final push to heroku, making sure that my environment variables were correctly input into the heroku dashboard for the app and that debug was set to false so that the app was secure.
 
 I created a favicon for my app, using a freefavicom creator and had a go at creating a user profile and having it linked to my orders database but unfortunately I ran out of time to complete this part of the app.
+
+I revisited my project later on in response to feedback from CI and decided to restyle it using bootstrap 4.  I changed my navbar to dark and also choose a new image for my about us page.  As the website is aimed at parents of pupils, I decided to give it a more formal feel so the look of the website was deliberately kept clean and simple so that users could easily navigate through it. I went through all the apps in my project adding in comments as advised by CI and in the navbar I moved my search button so that rather than it showing at the top of each page, it was now incorporated into the navbar.
 
 I had created my wireframes earlier and was working from these when creating my app, but decided to add them in to a folder called wireframes at the top level of my app.
 
@@ -387,4 +391,4 @@ The idea of creating [a user persona](https://www.romanpichler.com/tools/the-per
 
 ## Acknowledgements
 
-I received inspiration for this project from my mentor [Simen Daehlin](https://www.linkedin.com/in/simendaehlin/), fellow students especially family, friends and my teaching colleagues at [JK Educate](https://www.jkeducate.co.uk/) and school students were also very helpful in giving me feedback.  The [Code Insitute videos](https://codeinstitute.net/)  were useful in giving me the basic way to go about creating different functionality in my app.  I used the [django documentation](https://docs.djangoproject.com/en/3.0/) to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet with only 20% of the time actually spent coding.  Hopefully next time I do a similar project things wont take so long and I will be better at sorting out any issues that arise!
+I received inspiration for this project from my mentor [Simen Daehlin](https://www.linkedin.com/in/simendaehlin/), fellow students especially family, friends and my teaching colleagues at [JK Educate](https://www.jkeducate.co.uk/) and school students were also very helpful in giving me feedback.  The [Code Insitute videos](https://codeinstitute.net/)  were useful eventually, once I understood them, in giving me the basic way to go about creating different functionality in my app.  The accounts app was reused from the CI code and I have spent time annotating each app showing how the code works.   I used the [django documentation](https://docs.djangoproject.com/en/3.0/) to help me sort things out on a regular basis, although I have to admit that at times it was difficult to understand what to do to sort out a problem and I spent around 80% of my time on this project looking things up on the internet with only 20% of the time actually spent coding.  Hopefully next time I do a similar project things wont take so long and I will be better at sorting out any issues that arise!
