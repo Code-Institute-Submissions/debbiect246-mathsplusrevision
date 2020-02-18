@@ -378,6 +378,8 @@ I checked that my app was now deployed via Heroku
  1. Add user orders to profile page.
  2. Allow user to search blog using tags or words of interest.
  3. Add in a testimonial section where parents can post reviews of papers their children have used - the reviews would have to be moderated first before appearing on this page.
+ 4. Include a feature where users can download a paper from the website once the paper has been paid for.  Download should be in the form of a zip file.
+ 5. Get password reset working.
 
 ## Credits
 
@@ -388,6 +390,15 @@ The photo used on the about us page was by Dawid Małecki on Unsplash.
 * Persona idea
 
 The idea of creating [a user persona](https://www.romanpichler.com/tools/the-persona-template/) came from a blog I read by Roman Pichler, a project management expert who specialises in digital products using Agile and Scrum methodologies.
+
+* Code institute modules and code
+
+The code institute modules were useful but following the code at times was problematic, as several areas were gone through very quickly and finding people
+to discuss this with was difficult at times.  People who were around in the slack room
+did their best to help when they were available and CI tutors helped when I was
+really stuck.  So I have used the code provided by CI in my project, customising it and commenting on it so as to get my project to work.  CI code features in all my apps
+but I have commented on it to show my understanding and how I have adapted it to
+work in my project.
 
 ## Acknowledgements
 
