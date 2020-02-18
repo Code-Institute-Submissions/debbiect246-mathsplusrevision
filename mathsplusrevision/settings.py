@@ -28,12 +28,15 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+#debug set to false when project pushed to heroku.
+DEBUG = False
+
+# project hosted on heroku so link to heroku app is here.
 
 ALLOWED_HOSTS = ['maths-plus-revision.herokuapp.com', '127.0.0.1']
 
 
-# Application definition
+# Application definition - apps installed in this project.
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -65,6 +68,8 @@ MIDDLEWARE = [
 
 ]
 
+# urls master link for this project.
+
 ROOT_URLCONF = 'mathsplusrevision.urls'
 
 TEMPLATES = [
@@ -87,12 +92,15 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mathsplusrevision.wsgi.application'
 
+#redundant databases
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
+
+#instructions to django for accessing database
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(
