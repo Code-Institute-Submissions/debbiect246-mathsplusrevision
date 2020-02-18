@@ -28,7 +28,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-#debug set to false when project pushed to heroku.
+# debug set to false when project pushed to heroku.
 DEBUG = False
 
 # project hosted on heroku so link to heroku app is here.
@@ -92,7 +92,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mathsplusrevision.wsgi.application'
 
-#redundant databases
+# redundant databases
 
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
@@ -100,7 +100,7 @@ WSGI_APPLICATION = 'mathsplusrevision.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-#instructions to django for accessing database
+# instructions to django for accessing database
 
 if "DATABASE_URL" in os.environ:
     DATABASES = {'default': dj_database_url.parse(
@@ -157,7 +157,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIA_URL = '/media/'
 
@@ -165,4 +166,3 @@ STRIPE_PUBLISHABLE = os.getenv('STRIPE_PUBLISHABLE')
 STRIPE_SECRET = os.getenv('STRIPE_SECRET')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-django_heroku.settings(locals())
