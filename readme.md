@@ -223,7 +223,7 @@ Result:  Blog views are shown next to each post.
 Ensure that only registered users can login. If an unregistered user tries to log in they are directed to the register page.  
 A message is shown that tells the user that they are logged in or that they have created an account. Result:  Message "you are logged in" appears.
 Ensure that if user forgets password an email is sent to the users registered email address.
-Result:  email to reset password is sent to users registered email address.
+Result:  email to reset password is not sent to users registered email address.  This needs more work.
 
 * Papers
  Check that one paper in each set of 11 plus, 13 plus and 16 plus is free to order.  Other sets of papers cost £10 each.  Result:  As expected.
