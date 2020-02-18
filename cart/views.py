@@ -10,8 +10,11 @@ def view_cart(request):
 
 
 def add_to_cart(request, id):
-    """Add a paper to the cart"""
-    """ try except loop ensures that user can only enter an integer quantity"""
+    """
+    Add a paper to the cart
+     try except loop ensures that user can only enter an integer quantity
+    """
+
     try:
         quantity = int(request.POST.get('quantity'))
 
@@ -48,8 +51,9 @@ def adjust_cart(request, id):
             request, "select a whole number of papers in the amend box please.")
         return render(request, "cart.html")
 
-    # checks to see that quantity ordered is greater than 0 then puts items
-    # into cart ready for checkout then display the cart page with amended order included.
+    ''' checks to see that quantity ordered is greater than 0 then puts items
+    into cart ready for checkout then display the cart page with amended order included.
+    '''
     if quantity > 0:
         cart[id] = quantity
 
