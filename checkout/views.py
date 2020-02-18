@@ -1,3 +1,11 @@
+'''
+all django bits imported here so that checkout app can run.
+render, login, messages, django.contrib.auth libraries imported.
+Then order form and order line item are imported from the checkouy
+forms and models. Finally stripe is imported together with the user
+profile and models from the product app.
+'''
+
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
@@ -11,6 +19,14 @@ import stripe
 
 # Create your views here.
 stripe.api_key = settings.STRIPE_SECRET
+
+'''decorator for checkout - controls what happens when user checks out items.
+So if checkout request is valie then it is posted to orders model and
+payment can be made by the user via stripe.  If the order is not valid then
+an error message is shown indicating that there is a problem with the credit
+card used.  All orders are saved with a date stamp and users are shown details of
+each order made via the product app.
+'''
 
 
 @login_required()

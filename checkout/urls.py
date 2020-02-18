@@ -1,3 +1,4 @@
+# urls for checkout app recorded here.-->
 from django.conf.urls import url
 from .views import checkout
 

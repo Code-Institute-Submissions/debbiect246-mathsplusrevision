@@ -1,12 +1,14 @@
+# import forms for the user to use to checkout their order.
+
 from django import forms
 from .models import Order
 
-
+#set up payment form
 class MakePaymentForm(forms.Form):
-
+    #user inputs expiry date on credit card used.
     MONTH_CHOICES = [(i, i) for i in range(1, 12)]
-    YEAR_CHOICES = [(i, i) for i in range(2020, 2036)]
-
+    YEAR_CHOICES = [(i, i) for i in range(2021, 2036)]
+    #credit card details passed from django to stripe.
     credit_card_number = forms.CharField(
         label='Credit card number', required=False)
     cvv = forms.CharField(label='Security code (CVV)', required=False)
@@ -16,7 +18,7 @@ class MakePaymentForm(forms.Form):
         label='Year', choices=YEAR_CHOICES, required=False)
     stripe_id = forms.CharField(widget=forms.HiddenInput)
 
-
+#order form where user submits their name and other details.
 class OrderForm(forms.ModelForm):
 
     class Meta:
